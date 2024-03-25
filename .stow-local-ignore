@@ -1,0 +1,16 @@
+# This file contains a list of files and directories that should be ignored by
+# GNU stow when creating symlinks. It is used by the `stow` command to avoid
+# creating symlinks for files that are not part of the configuration.
+
+# Ignore version control directories
+.git/*
+.svn/*
+
+# Ignore OS-specific directories
+.DS_Store
+.AppleDouble
+._*
+
+# System directories that will require sudo
+/bin
+/etc
