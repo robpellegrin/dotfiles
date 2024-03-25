@@ -52,6 +52,8 @@ cd ~/.dotfiles
 stow -t /bin bin
 ```
 
+Note that the `-t` flag specifies the target directory where the symlinks will be created. In this case, the target directory is `/bin`. Depending on the directory you are copying to, you may need to use `sudo` to create the symlinks.
+
 
 ## License
 
