@@ -3,14 +3,14 @@
 # for examples
 
 # Color codes
-RED='\[\e[0;31m\]'       # Red color
-GREEN='\[\e[0;32m\]'     # Green color
-YELLOW='\[\e[0;33m\]'    # Yellow color
-BLUE='\[\e[0;34m\]'      # Blue color
-PURPLE='\[\e[0;35m\]'    # Purple color
-CYAN='\[\e[0;36m\]'      # Cyan color
-WHITE='\[\e[0;37m\]'     # White color
-RESET='\[\e[0m\]'        # Reset color
+RED='\[\e[0;31m\]'       # Red
+GREEN='\[\e[0;32m\]'     # Green
+YELLOW='\[\e[0;33m\]'    # Yellow
+BLUE='\[\e[0;34m\]'      # Blue
+PURPLE='\[\e[0;35m\]'    # Purple
+CYAN='\[\e[0;36m\]'      # Cyan
+WHITE='\[\e[0;37m\]'     # White
+RESET='\[\e[0m\]'        # Reset
 
 # If not running interactively, don't do anything
 case $- in
@@ -21,6 +21,9 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
+
+# Ignores lines that start with & and commands like ls, pwd, and exit from being added to the history.
+HISTIGNORE="&:ls:pwd:exit"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -90,24 +93,13 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-#alias l='ls -CF'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# Loaded aliases from file.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
