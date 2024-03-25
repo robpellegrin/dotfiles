@@ -7,8 +7,6 @@ This repository contains dotfiles for configuring various applications and setti
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Customization](#customization)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
@@ -17,7 +15,7 @@ Dotfiles are essential for maintaining a consistent and efficient working enviro
 
 ## Installation
 
-To use these dotfiles on your Debian system, you can clone this repository to your local machine:
+To use these dotfiles on your system, clone this repository to your home folder (or any other location of your choice) using Git. You can do this by running the following command in your terminal:
 
 ```bash
 git clone https://github.com/your-username/dotfiles.git ~/.dotfiles
@@ -29,33 +27,31 @@ Optionally, install the `stow` utility to manage the dotfiles:
 sudo apt install stow
 ```
 
-'stow' is a symlink farm manager which takes distinct packages of software and/or data located in separate directories on the filesystem, and makes them appear to be installed in the same place. Once 'stow' is installed, you can use it to manage the dotfiles in this repository with ease.
+[stow](https://www.gnu.org/software/stow/) is a symlink farm manager which takes distinct packages of software and/or data located in separate directories on the filesystem, and makes them appear to be installed in the same place. This is especially useful for managing dotfiles, as it allows you to keep all your configuration files in a single directory and symlink them to the appropriate locations.
+
+Once `stow` is installed, you can use it to manage the dotfiles in this repository with ease.
 
 ## Usage
 
-To install the dotfiles for a specific application or setting, navigate to the corresponding directory and use `stow` to create symlinks in your home directory:
+After cloning the repository and installing `stow`, navigate to the `~/.dotfiles` directory:
 
 ```bash
 cd ~/.dotfiles
-stow bash
 ```
 
-This will create symlinks for the bash configuration files in your home directory. You can repeat this process for other directories to install additional dotfiles:
+You can install all the dotfiles at once by using `stow` to create symlinks in your home directory:
 
 ```bash
-stow vim
-stow git
+stow .
 ```
 
-You can easily copy them all at once by running:
+Alternatively, you can install the dotfiles for a specific application or setting by navigating to the corresponding directory and using `stow` to create symlinks in your home directory, as in the following example:
 
 ```bash
-stow *
+cd ~/.dotfiles
+stow -t /bin bin
 ```
 
-## Customization
-
-You can customize the dotfiles to suit your preferences by editing the configuration files in each directory. Feel free to modify the settings, add new configurations, or remove existing ones as needed.
 
 ## License
 
