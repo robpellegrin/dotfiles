@@ -6,5 +6,6 @@ AccessModifierOffset: -3
 AlignConsecutiveDeclarations: false
 AllowShortLoopsOnASingleLine: false
 AllowShortIfStatementsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
 BreakBeforeBinaryOperators: All
 CommentPragmas:  '^-\*-,^\*-,^\s-\*-,\s-\*-,^\s-\*'
