@@ -14,3 +14,6 @@
 # System directories that will require sudo
 /bin
 /etc
+
+# Misc files
+README.md
