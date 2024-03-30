@@ -78,8 +78,7 @@ fi
 unset color_prompt force_color_prompt
 
 # Custom PS1
-PS1="${GREEN}\u@\h${YELLOW} \w${RESET} \$ "
-
+PS1="${GREEN}\u@\h${YELLOW} \w${RESET} \n${BLUE}❯${RESET} "
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
