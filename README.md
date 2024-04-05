@@ -49,7 +49,7 @@ sudo apt install stow
 Once the repository is cloned and stow is installed (if desired), navigate to the ~/.dotfiles directory in your terminal:
 
 ```bash
-cd ~/.dotfiles
+cd ~/dotfiles
 ```
 
 To install all dotfiles at once, utilize stow to create symbolic links in your home directory:
