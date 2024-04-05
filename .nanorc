@@ -21,7 +21,7 @@
 ## Automatically indent a newly created line to the same number of
 ## tabs and/or spaces as the preceding line -- or as the next line
 ## if the preceding line is the beginning of a paragraph.
-# set autoindent
+set autoindent
 
 ## Back up files to the current filename plus a tilde.
 # set backup
@@ -68,7 +68,7 @@
 set historylog
 
 ## Display a "scrollbar" on the righthand side of the edit window.
-# set indicator
+set indicator
 
 ## Scroll the buffer contents per half-screen instead of per line.
 # set jumpyscrolling
