@@ -1,0 +1,2 @@
+user_pref("media.gmp-widevinecdm.visible", false);
+user_pref("network.protocol-handler.external.mailto", false);
