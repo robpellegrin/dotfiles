@@ -7,7 +7,7 @@ alias commit="git commit -m"
 alias dir='dir --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias gcc='gcc -std=c11 -Wall -Wextra'
+alias gcc='gcc -std=c11 -Wall -Wextra -pedantic -pthread'
 alias grep='grep --color=auto'
 alias lla='ls -lah --color=auto'
 alias ll='ls -lh --color=auto'
