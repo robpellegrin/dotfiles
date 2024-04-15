@@ -15,6 +15,7 @@ alias ls='ls --color=auto'
 alias m='make'
 alias mr='make run'
 alias notify='aplay --quiet ~/.local/complete.wav'
+alias pull="git pull"
 alias push="git push"
 alias py='python3'
 alias rp='rsync --progress'
