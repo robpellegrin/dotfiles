@@ -46,5 +46,10 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "git.autofetch": true
+    "git.autofetch": true,
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss19', 'ss20'",
+    "editor.fontFamily": "'Cascadia Code', monospace"
 }
