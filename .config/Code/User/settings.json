@@ -33,15 +33,6 @@
     ],
     "workbench.sideBar.location": "right",
     "workbench.colorTheme": "GitHub Dark Default",
-    "[java]": {
-        "editor.defaultFormatter": "redhat.java"
-    },
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": true,
-        "scminput": false
-    },
     "inference.model": "codellama:13b-code-q6_K",
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
@@ -51,5 +42,21 @@
         "editor.defaultFormatter": "vscode.css-language-features"
     },
     "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss19', 'ss20'",
-    "editor.fontFamily": "'Cascadia Code', monospace"
+    "editor.fontFamily": "'Cascadia Code', monospace",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[latex]": {        
+        "editor.formatOnPaste": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "latex-workshop.linting.chktex.enabled": true,
+    "editor.cursorStyle": "block",
+    "latex-workshop.latexindent.path": "/home/rob/Downloads/latexindent",
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-m"
+    ],
+    "latex-workshop.latex.outDir": "%DIR%/latex-build"
 }
