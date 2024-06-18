@@ -58,5 +58,7 @@
         "%TMPFILE%",
         "-m"
     ],
-    "latex-workshop.latex.outDir": "%DIR%/latex-build"
+    "latex-workshop.latex.outDir": "%DIR%/latex-build",
+    "latex-workshop.docker.enabled": true,
+    "latex-workshop.docker.image.latex": "latex-environment:latest"
 }
