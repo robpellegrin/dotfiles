@@ -44,7 +44,7 @@
     "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss19', 'ss20'",
     "editor.fontFamily": "'Cascadia Code', monospace",
     "diffEditor.ignoreTrimWhitespace": false,
-    "[latex]": {        
+    "[latex]": {
         "editor.formatOnPaste": false,
         "editor.suggestSelection": "recentlyUsedByPrefix",
         "editor.defaultFormatter": "James-Yu.latex-workshop"
@@ -63,10 +63,8 @@
     "latex-workshop.docker.enabled": true,
     "window.customTitleBarVisibility": "never",
     "C_Cpp.intelliSenseEngine": "disabled",
-
     "workbench.colorCustomizations": {
-    "statusBarItem.remoteBackground": "#007ACC",
-    "statusBarItem.remoteForeground": "#ffffff"
-}
-
+        "statusBarItem.remoteBackground": "#007ACC",
+        "statusBarItem.remoteForeground": "#ffffff"
+    }
 }
