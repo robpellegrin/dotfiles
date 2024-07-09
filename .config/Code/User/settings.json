@@ -51,7 +51,6 @@
     },
     "latex-workshop.linting.chktex.enabled": true,
     "editor.cursorStyle": "block",
-    "latex-workshop.latexindent.path": "/home/rob/Downloads/latexindent",
     "latex-workshop.latexindent.args": [
         "-c",
         "%DIR%/",
@@ -59,6 +58,15 @@
         "-m"
     ],
     "latex-workshop.latex.outDir": "%DIR%/latex-build",
+    "latex-workshop.docker.image.latex": "latex-environment:latest",
+    "git.ignoreMissingGitWarning": true,
     "latex-workshop.docker.enabled": true,
-    "latex-workshop.docker.image.latex": "latex-environment:latest"
+    "window.customTitleBarVisibility": "never",
+    "C_Cpp.intelliSenseEngine": "disabled",
+
+    "workbench.colorCustomizations": {
+    "statusBarItem.remoteBackground": "#007ACC",
+    "statusBarItem.remoteForeground": "#ffffff"
+}
+
 }
