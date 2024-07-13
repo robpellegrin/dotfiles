@@ -70,5 +70,7 @@
     "[c]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
-    "editor.renderWhitespace": "trailing"
+    "editor.renderWhitespace": "trailing",
+    "editor.lightbulb.enabled": "off"
+
 }
