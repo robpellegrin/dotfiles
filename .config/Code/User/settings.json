@@ -66,5 +66,9 @@
     "workbench.colorCustomizations": {
         "statusBarItem.remoteBackground": "#007ACC",
         "statusBarItem.remoteForeground": "#ffffff"
-    }
+    },
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "editor.renderWhitespace": "trailing"
 }
