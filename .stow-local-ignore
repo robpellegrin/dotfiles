@@ -5,6 +5,7 @@
 # Ignore version control directories
 .git/*
 .svn/*
+.gitignore
 
 # Ignore OS-specific directories
 .DS_Store
