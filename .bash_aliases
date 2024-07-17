@@ -12,8 +12,6 @@ alias grep='grep --color=auto'
 alias lla='ls -lah'
 alias ll='ls -lh'
 alias ls='ls --color=always'
-alias m='make'
-alias mr='make run'
 alias notify='aplay --quiet ~/.local/complete.wav'
 alias pull="git pull"
 alias push="git push"
@@ -21,10 +19,19 @@ alias py='python3'
 alias rp='rsync --progress'
 alias sensors='sensors -f'
 alias ssh-home='ssh rob@76.21.176.250'
-alias update='sudo apt update && apt list --upgradeable'
-alias upgradeable='apt list --upgradable'
-alias upgrade='sudo apt upgrade'
 alias vdir='vdir --color=auto'
 alias emulator_pixel='emulator -avd Pixel_7_Pro >/dev/null 2>&1 & disown'
 alias celcy='cd ~/github/app-sandbox/ && (emulator -avd Pixel_7_Pro >/dev/null 2>&1 &) && npm start'
 alias rmtrash='mv -t ~/.local/share/Trash/files/'
+alias git-update-all='find ~/github -maxdepth 1 -mindepth 1 -type d -exec bash -c "cd \"{}\" && echo \"Updating \$(basename \"{}\")\" && git pull" \;'
+
+# Configure alias for update & upgrade, depending on the distro used.
+if [ -f /etc/debian_version ]; then
+    alias update="sudo apt update && apt list --upgradeable"
+    alias upgrade="sudo apt upgrade"
+elif [ -f /etc/redhat-release ]; then
+    alias update="dnf check-update"
+    alias upgrade="sudo dnf upgrade"
+else
+    echo "Unknown distribution"
+fi
