@@ -18,10 +18,7 @@ alias push="git push"
 alias py='python3'
 alias rp='rsync --progress'
 alias sensors='sensors -f'
-alias ssh-home='ssh rob@76.21.176.250'
 alias vdir='vdir --color=auto'
-alias emulator_pixel='emulator -avd Pixel_7_Pro >/dev/null 2>&1 & disown'
-alias celcy='cd ~/github/app-sandbox/ && (emulator -avd Pixel_7_Pro >/dev/null 2>&1 &) && npm start'
 alias rmtrash='mv -t ~/.local/share/Trash/files/'
 alias git-update-all='find ~/github -maxdepth 1 -mindepth 1 -type d -exec bash -c "cd \"{}\" && echo \"Updating \$(basename \"{}\")\" && git pull" \;'
 
