@@ -8,6 +8,7 @@ alias dir='dir --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gcc='gcc -std=c11 -Wall -Wextra -pedantic -pthread'
+alias git-update-all='find ~/github -maxdepth 1 -mindepth 1 -type d -exec bash -c "cd \"{}\" && echo \"Updating \$(basename \"{}\")\" && git pull" \;'
 alias grep='grep --color=auto'
 alias lla='ls -lah'
 alias ll='ls -lh'
@@ -16,19 +17,31 @@ alias notify='aplay --quiet ~/.local/complete.wav'
 alias pull="git pull"
 alias push="git push"
 alias py='python3'
+alias rmtrash='mv -t ~/.local/share/Trash/files/'
 alias rp='rsync --progress'
 alias sensors='sensors -f'
 alias vdir='vdir --color=auto'
-alias rmtrash='mv -t ~/.local/share/Trash/files/'
-alias git-update-all='find ~/github -maxdepth 1 -mindepth 1 -type d -exec bash -c "cd \"{}\" && echo \"Updating \$(basename \"{}\")\" && git pull" \;'
 
-# Configure alias for update & upgrade, depending on the distro used.
+# Detect the distribution and set package management commands
 if [ -f /etc/debian_version ]; then
-    alias update="sudo apt update && apt list --upgradeable"
-    alias upgrade="sudo apt upgrade"
+    # For Debian-based systems
+    pkg_update="sudo apt update"
+    pkg_upgrade="sudo apt upgrade -y"
 elif [ -f /etc/redhat-release ]; then
-    alias update="dnf check-update"
-    alias upgrade="sudo dnf upgrade"
+    # For Red Hat-based systems
+    pkg_update="dnf check-update"
+    pkg_upgrade="sudo dnf upgrade"
 else
+    # If the distribution is not recognized
     echo "Unknown distribution"
 fi
+
+# Check if Flatpak is installed and modify commands to include Flatpak updates
+if command -v flatpak &> /dev/null; then
+    pkg_update="$pkg_update && flatpak remote-ls --updates" # List Flatpak updates
+    pkg_upgrade="$pkg_upgrade && flatpak update -y" # Apply Flatpak updates
+fi
+
+# Create aliases for update and upgrade commands
+alias update="$pkg_update"
+alias upgrade="$pkg_upgrade"
