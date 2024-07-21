@@ -71,6 +71,16 @@
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "editor.renderWhitespace": "trailing",
-    "editor.lightbulb.enabled": "off"
-
+    "editor.lightbulb.enabled": "off",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    // "foreground": "#57A64A" // C++ Green
+                    "foreground": "#2ECC71" // Teal Green
+                },
+            }
+        ]
+    },
 }
