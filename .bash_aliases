@@ -25,7 +25,7 @@ alias vdir='vdir --color=auto'
 # Detect the distribution and set package management commands
 if [ -f /etc/debian_version ]; then
     # For Debian-based systems
-    pkg_update="sudo apt update"
+    pkg_update="sudo apt update && apt list --upgradable"
     pkg_upgrade="sudo apt upgrade -y"
 elif [ -f /etc/redhat-release ]; then
     # For Red Hat-based systems
