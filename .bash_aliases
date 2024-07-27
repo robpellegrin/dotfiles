@@ -5,7 +5,7 @@ alias ..="cd .."
 alias clip='xsel -ib'
 alias commit="git commit -m"
 alias dir='dir --color=auto'
-alias egrep='egrep --color=auto'
+alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gcc='gcc -std=c11 -Wall -Wextra -pedantic -pthread'
 alias git-update-all='find ~/github -maxdepth 1 -mindepth 1 -type d -exec bash -c "cd \"{}\" && echo \"Updating \$(basename \"{}\")\" && git pull" \;'
