@@ -18,7 +18,6 @@ alias notify='aplay --quiet ~/.local/complete.wav'
 alias pull="git pull"
 alias push="git push"
 alias py='python3'
-alias rmtrash='mv -t ~/.local/share/Trash/files/'
 alias rp='rsync --progress'
 alias sensors='sensors -f'
 alias vdir='vdir --color=auto'
@@ -46,3 +45,34 @@ fi
 # Create aliases for update and upgrade commands
 alias update="$pkg_update"
 alias upgrade="$pkg_upgrade"
+
+# This function moves files to the trash bin
+move_to_trash() {
+    local trash_dir="/home/$USER/.local/share/Trash/files"
+    local info_dir="/home/$USER/.local/share/Trash/info"
+    local current_time=$(date +%Y-%m-%dT%H:%M:%S)
+    
+    # Loop through each argument    
+    for item in "$@"; do
+        if [[ -e "$item" ]]; then
+            # Get the base name and the full path
+            local base_name=$(basename "$item")
+            local file_name="${base_name}-${current_time}"
+            local target="$trash_dir/$file_name"
+
+            # Move the item to the trash
+            mv "$item" "$target"
+
+            # Record info about the trashed item (optional)
+            echo "[Trash Info]" > "$info_dir/$file_name.trashinfo"
+            echo "Path=$(realpath "$item")" >> "$info_dir/$file_name.trashinfo"
+            echo "DeletionDate=$current_time" >> "$info_dir/$file_name.trashinfo"
+
+            # echo "Moved '$item' to trash as '$target'."
+        else
+            echo "Error: '$item' does not exist."
+        fi
+    done
+}
+
+alias trash='move_to_trash'
