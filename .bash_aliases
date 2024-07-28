@@ -4,6 +4,7 @@ alias ...="cd ../.."
 alias ..="cd .."
 alias clip='xsel -ib'
 alias commit="git commit -m"
+alias cp="cp -i"
 alias dir='dir --color=auto'
 alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
