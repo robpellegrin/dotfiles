@@ -30,7 +30,7 @@ if [ -f /etc/debian_version ]; then
 elif [ -f /etc/redhat-release ]; then
     # For Red Hat-based systems
     pkg_update="dnf check-update"
-    pkg_upgrade="sudo dnf upgrade"
+    pkg_upgrade="yes | sudo dnf upgrade"
 else
     # If the distribution is not recognized
     echo "Unknown distribution"
