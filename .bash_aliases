@@ -5,7 +5,9 @@ alias ..="cd .."
 alias clip='xsel -ib'
 alias commit="git commit -m"
 alias cp="cp -i"
+alias df="df -h"
 alias dir='dir --color=auto'
+alias free="free -h"
 alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gcc='gcc -std=c11 -Wall -Wextra -pedantic -pthread'
