@@ -33,6 +33,10 @@ elif [ -f /etc/redhat-release ]; then
     # For Red Hat-based systems
     pkg_update="dnf check-update"
     pkg_upgrade="yes | sudo dnf upgrade"
+elif hostnamectl | grep -i "opensuse" > /dev/null 2>&1; then
+    # For openSUSE
+    pkg_update="sudo zypper refresh && zypper list-updates"
+    pkg_upgrade="sudo zypper update"
 else
     # If the distribution is not recognized
     echo "Unknown distribution"
