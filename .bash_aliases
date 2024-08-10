@@ -45,7 +45,7 @@ fi
 # Check if Flatpak is installed and modify commands to include Flatpak updates
 if command -v flatpak &> /dev/null; then
     pkg_update="$pkg_update && flatpak remote-ls --updates" # List Flatpak updates
-    pkg_upgrade="$pkg_upgrade && flatpak update -y" # Apply Flatpak updates
+    pkg_upgrade="$pkg_upgrade && sudo flatpak update -y" # Apply Flatpak updates
 fi
 
 # Create aliases for update and upgrade commands
