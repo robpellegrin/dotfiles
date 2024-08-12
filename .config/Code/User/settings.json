@@ -49,18 +49,25 @@
         "editor.suggestSelection": "recentlyUsedByPrefix",
         "editor.defaultFormatter": "James-Yu.latex-workshop"
     },
-    "latex-workshop.linting.chktex.enabled": true,
     "editor.cursorStyle": "block",
-    "latex-workshop.latexindent.args": [
-        "-c",
-        "%DIR%/",
-        "%TMPFILE%",
-        "-m"
-    ],
+    "latex-workshop.linting.chktex.enabled": true,
     "latex-workshop.latex.outDir": "%DIR%/latex-build",
-    "latex-workshop.docker.image.latex": "latex-environment:latest",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-pdf",
+                "-outdir=%DIR%",
+                "-auxdir=%DIR%/latex-build",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk",
     "git.ignoreMissingGitWarning": true,
-    "latex-workshop.docker.enabled": true,
     "window.customTitleBarVisibility": "never",
     "C_Cpp.intelliSenseEngine": "disabled",
     "workbench.colorCustomizations": {
@@ -84,4 +91,12 @@
             }
         ]
     },
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent: '%INDENT%'",
+        "-m"
+    ],
+    "latex-workshop.latexindent.path": "/workspaces/LaTex/latexindent",
 }
