@@ -82,20 +82,6 @@ probmpt_symbol=""
 # Custom PS1
 PS1="${GREEN}\u@\h${YELLOW} \w${RESET} \n${BLUE}❯${RESET} "
 
-# Define a function to update the prompt
-function update_prompt {
-    local exit_status=$?
-    if [ $exit_status -eq 0 ]; then
-        prompt_symbol="${GREEN}✓${RESET}"  # Success symbol
-    else
-        prompt_symbol="${RED}✗${RESET}"  # Failure symbol
-    fi
-    PS1="${prompt_symbol} ${GREEN}\u@\h${YELLOW} \w${RESET} \n${BLUE}❯${RESET} "
-}
-
-# Set the PROMPT_COMMAND to call the update_prompt function before displaying each prompt
-PROMPT_COMMAND=update_prompt
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
