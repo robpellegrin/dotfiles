@@ -121,3 +121,7 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
+# Load z plugin
+if [ -f ~/zsh-z/zsh-z.plugin.zsh ]; then
+    source ~/zsh-z/zsh-z.plugin.zsh
+fi
