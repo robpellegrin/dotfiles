@@ -10,7 +10,7 @@ alias dir='dir --color=auto'
 alias free="free -h"
 alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
-alias gcc='gcc -std=c11 -Wall -Wextra -pedantic -pthread'
+alias gcc='gcc -std=c11 -Wall -Wextra -pedantic'
 alias git-update-all='find ~/github -maxdepth 1 -mindepth 1 -type d -exec bash -c "cd \"{}\" && echo \"Updating \$(basename \"{}\")\" && git pull" \;'
 alias grep='grep --color=auto'
 alias lla='ls -lah'
