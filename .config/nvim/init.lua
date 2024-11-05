@@ -20,18 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Setup lazy.nvim
-require("lazy").setup({
-  spec = require("plugins"),  -- Load plugins from the plugins.lua file
-
-  -- Configure any other settings here. See the documentation for more details.
-  install = { colorscheme = { "habamax" } },
-  checker = { enabled = true },
-})
--- vim.cmd.colorscheme "github_dark_default"
--- END LAZY SETUP --
-
--- Additional configuration, mappings, and settings
+require("lazy").setup("plugins")
 
 -- Neotree
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>')
