@@ -1,6 +1,6 @@
 BasedOnStyle: Google
-IndentWidth: 4
-TabWidth: 4
+IndentWidth: 2 
+TabWidth: 2
 ColumnLimit: 80
 AccessModifierOffset: -3
 AlignConsecutiveDeclarations: false
