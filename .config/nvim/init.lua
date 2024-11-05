@@ -1,17 +1,16 @@
-" Enable ctrl + s to save
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>l
+-- Key mappings
+vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
 
-" Enable control + x to exit
-nnoremap <C-x> :q<CR>
-inoremap <C-x> <Esc>:q<CR>
+vim.api.nvim_set_keymap("i", "<C-x>", "<Esc>:q<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-x>", ":q<CR>", { noremap = true, silent = true })
 
-" Enable line numbers
-set number
+-- Line numbers and tabs configuration
+vim.opt.number = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
-" Set tab width to 4 spaces
-set tabstop=4
-set shiftwidth=4
-     
-" Use spaces instead of tabs
-set expandtab
+-- Remove '~' on empty lines
+vim.opt.fillchars = "eob: "  -- Set the 'eob' (end-of-buffer) fill character to a space
+
