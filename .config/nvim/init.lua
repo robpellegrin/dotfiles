@@ -16,47 +16,22 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
+-- Set mapleader before lazy.nvim is loaded
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    --Github theme
-    { 'projekt0n/github-nvim-theme', name = 'github-theme' },
-    
-    -- Telescope
-    {'nvim-telescope/telescope.nvim', tag = '0.1.8',
-      dependencies = { 'nvim-lua/plenary.nvim' }},
-    
-    -- Treesitter
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  spec = require("plugins"),  -- Load plugins from the plugins.lua file
 
-    -- Neotree
-    {
-      "nvim-neo-tree/neo-tree.nvim",
-      branch = "v3.x",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-}
-    
-    -- add your plugins here
-  },
   -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
   checker = { enabled = true },
 })
 vim.cmd.colorscheme "github_dark_default"
 -- END LAZY SETUP --
+
+-- Additional configuration, mappings, and settings
 
 -- Neotree
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>')
@@ -72,13 +47,12 @@ configs.setup({
   ensure_installed = { "c", "cpp", "vim", "python", "lua", "java", "rust" },
   sync_install = false,
   highlight = { enable = true },
-  indent = { enable = true },  
+  indent = { enable = true },
 })
 
 -- Key mappings
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
-
 vim.api.nvim_set_keymap("i", "<C-x>", "<Esc>:q<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-x>", ":q<CR>", { noremap = true, silent = true })
 
@@ -93,4 +67,3 @@ vim.cmd("set shiftwidth=2")
 
 -- Remove '~' on empty lines
 vim.opt.fillchars = "eob: "  -- Set the 'eob' (end-of-buffer) fill character to a space
-
