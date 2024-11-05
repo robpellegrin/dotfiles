@@ -1,9 +1,6 @@
 -- plugins.lua
 
 return {
-  -- Github theme
-  { 'projekt0n/github-nvim-theme', name = 'github-theme' },
-
   -- Telescope
   { 'nvim-telescope/telescope.nvim', tag = '0.1.8', 
     dependencies = { 'nvim-lua/plenary.nvim' }

@@ -1,4 +1,4 @@
--- Lazy setup --
+-- LAZY SETUP --
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -28,7 +28,7 @@ require("lazy").setup({
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
 })
-vim.cmd.colorscheme "github_dark_default"
+-- vim.cmd.colorscheme "github_dark_default"
 -- END LAZY SETUP --
 
 -- Additional configuration, mappings, and settings
