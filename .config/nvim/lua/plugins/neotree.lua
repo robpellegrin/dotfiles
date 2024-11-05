@@ -1,15 +1,5 @@
--- plugins.lua
-
+-- Neotree.lua
 return {
-  -- Telescope
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.8', 
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-
-  -- Treesitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-
-  -- Neotree
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -19,7 +9,10 @@ return {
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window
     },
+    config = function()
+      -- Set the keymap to toggle Neotree with <C-n>
+      vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', { noremap = true, silent = true })
+    end,
   },
-
-  -- Add more plugins as necessary
 }
+

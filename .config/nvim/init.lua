@@ -22,23 +22,6 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup("plugins")
 
--- Neotree
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>')
-
--- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-
--- Treesitter
-local configs = require("nvim-treesitter.configs")
-configs.setup({
-  ensure_installed = { "c", "cpp", "vim", "python", "lua", "java", "rust" },
-  sync_install = false,
-  highlight = { enable = true },
-  indent = { enable = true },
-})
-
 -- Key mappings
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
