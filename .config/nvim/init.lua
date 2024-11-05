@@ -27,7 +27,8 @@ require("lazy").setup({
   spec = {
     { 'projekt0n/github-nvim-theme', name = 'github-theme' },
     {'nvim-telescope/telescope.nvim', tag = '0.1.8',
-      dependencies = { 'nvim-lua/plenary.nvim' }}
+      dependencies = { 'nvim-lua/plenary.nvim' }},
+      {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     -- add your plugins here
   },
   -- Configure any other settings here. See the documentation for more details.
@@ -42,6 +43,16 @@ vim.cmd.colorscheme "github_dark_default"
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+
+-- Treesitter
+local configs = require("nvim-treesitter.configs")
+configs.setup({
+  ensure_installed = { "c", "cpp", "vim", "python", "lua", "java", "rust" },
+  sync_install = false,
+  highlight = { enable = true },
+  indent = { enable = true },  
+})
 
 -- Key mappings
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
