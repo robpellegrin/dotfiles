@@ -19,6 +19,10 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
       lspconfig.clangd.setup({})
+
+      -- Key bindings
+      vim.keymap.set('n', 'H', vim.lsp.buf.hover, {})
+      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
     end
   }
 }
