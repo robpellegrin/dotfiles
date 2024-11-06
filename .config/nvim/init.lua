@@ -27,6 +27,7 @@ vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-x>", "<Esc>:q<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-x>", ":q<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-X>", ":qa!<CR>", { noremap = true, silent =true })
 
 -- Enable line numbers
 vim.cmd("set number")
