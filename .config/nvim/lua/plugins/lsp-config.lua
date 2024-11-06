@@ -1,17 +1,17 @@
 return {
   {
-  "williamboman/mason.nvim",
+    "williamboman/mason.nvim",
     config = function()
-			require("mason").setup()
-    end
+      require("mason").setup()
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
-    require("mason-lspconfig").setup({
-        ensure_installed  = { "lua_ls", "bashls", "clangd" }
+      require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls", "bashls", "clangd" },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -21,8 +21,8 @@ return {
       lspconfig.clangd.setup({})
 
       -- Key bindings
-      vim.keymap.set('n', 'H', vim.lsp.buf.hover, {})
-      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      vim.keymap.set("n", "H", vim.lsp.buf.hover, {})
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }

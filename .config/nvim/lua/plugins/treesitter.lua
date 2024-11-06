@@ -1,7 +1,7 @@
 -- Treesitter.lua
 return {
-  { 
-    "nvim-treesitter/nvim-treesitter", 
+  {
+    "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
 
     config = function()
@@ -12,6 +12,6 @@ return {
         highlight = { enable = true },
         indent = { enable = true },
       })
-    end
-  }
+    end,
+  },
 }
