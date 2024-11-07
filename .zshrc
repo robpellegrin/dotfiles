@@ -125,6 +125,7 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
+# Load custom path variables
 if [ -f ~/.custom_path ]; then
   source ~/.custom_path
 fi
