@@ -82,8 +82,8 @@ plugins=(
   git
   # vscode
   # z 
-  zsh-autosuggestions 
-  zsh-syntax-highlighting
+  # zsh-autosuggestions 
+  # zsh-syntax-highlighting
 )
 
 
