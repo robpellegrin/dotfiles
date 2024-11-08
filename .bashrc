@@ -22,7 +22,8 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# Ignores lines that start with & and commands like ls, pwd, and exit from being added to the history.
+# Ignores lines that start with & and commands like ls, pwd, and exit from 
+# being added to the history.
 HISTIGNORE="&:ls:pwd:exit"
 
 # append to the history file, don't overwrite it
@@ -55,7 +56,6 @@ esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
-
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
@@ -76,8 +76,6 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
-
-probmpt_symbol=""
 
 # Custom PS1
 PS1="${GREEN}\u@\h${YELLOW} \w${RESET} \n${BLUE}❯${RESET} "
