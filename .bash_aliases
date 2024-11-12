@@ -12,6 +12,7 @@ alias ga="git add"
 alias gcc='gcc -Wall -Wextra -pedantic'
 alias gc="git commit"
 alias gp="git pull"
+alias gr="git restore"
 alias grep='grep --color=auto'
 alias gs="git status"
 alias lla='ls -lah'
