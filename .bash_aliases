@@ -1,5 +1,3 @@
-alias .....="cd ../../../.."
-alias ....="cd ../../.."
 alias ...="cd ../.."
 alias ..="cd .."
 alias clip='xsel -ib'
@@ -7,17 +5,19 @@ alias commit="git commit -m"
 alias cp="cp -i"
 alias df="df -h"
 alias dir='dir --color=auto'
-alias free="free -h"
 alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
+alias free="free -h"
+alias ga="git add"
 alias gcc='gcc -Wall -Wextra -pedantic'
-alias git-update-all='find ~/github -maxdepth 1 -mindepth 1 -type d -exec bash -c "cd \"{}\" && echo \"Updating \$(basename \"{}\")\" && git pull" \;'
+alias gc="git commit"
+alias gp="git pull"
 alias grep='grep --color=auto'
+alias gs="git status"
 alias lla='ls -lah'
 alias ll='ls -lh'
 alias ls='ls --color=always'
 alias notify='aplay --quiet ~/.local/complete.wav'
-alias pull="git pull"
 alias push="git push"
 alias py='python3'
 alias rp='rsync --progress'
