@@ -24,6 +24,7 @@ alias py='python3'
 alias rp='rsync --progress'
 alias sensors='sensors -f'
 alias vdir='vdir --color=auto'
+alias docker='podman'
 
 # Detect the distribution and set package management commands
 if [ -f /etc/debian_version ]; then
