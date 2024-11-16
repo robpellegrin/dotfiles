@@ -31,6 +31,9 @@ vim.api.nvim_set_keymap("n", "<C-X>", ":qa!<CR>", { noremap = true, silent = tru
 
 vim.api.nvim_set_keymap("n", "D", "dd", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>ft', ':FloatermToggle<CR>', { noremap = true })
+
+
 -- Enable line numbers
 vim.cmd("set number")
 
@@ -45,9 +48,3 @@ vim.opt.fillchars = "eob: " -- Set the 'eob' (end-of-buffer) fill character to a
 
 -- Cursor blink
 vim.opt.guicursor = "a:blinkon1"
-
--- Highlight trailing whitespace
-vim.cmd([[
-  highlight ExtraWhitespace ctermbg=red guibg=red
-  match ExtraWhitespace /\s\+$/
-]])
