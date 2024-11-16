@@ -9,7 +9,9 @@ return {
 
 		-- ASCII logo with "NEOVIM"
 		dashboard.section.header.val = {
-			[[                                                   ]],
+      [[                                                   ]],
+      [[                                                   ]],
+      [[                                                   ]],
 			[[                                                   ]],
 			[[                                                   ]],
 			[[                                                   ]],
