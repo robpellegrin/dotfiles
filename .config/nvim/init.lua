@@ -31,7 +31,7 @@ vim.api.nvim_set_keymap("n", "<C-X>", ":qa!<CR>", { noremap = true, silent = tru
 
 vim.api.nvim_set_keymap("n", "D", "dd", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>ft', ':FloatermToggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>t', ':FloatermToggle<CR>', { noremap = true })
 
 
 -- Enable line numbers
