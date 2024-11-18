@@ -108,6 +108,11 @@ if [ -f ~/.custom_path ]; then
   . ~/.custom_path
 fi
 
+# Load CD customizations 
+if [ -f ~/.cdpath ]; then
+  source ~/.cdpath
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).

@@ -131,6 +131,11 @@ if [ -f ~/.custom_path ]; then
   source ~/.custom_path
 fi
 
+# Load CD customizations
+if [ -f ~/.cdpath ]; then
+  source ~/.cdpath
+fi
+
 # Load z plugin
 if [ -f ~/zsh-z/zsh-z.plugin.zsh ]; then
     source ~/zsh-z/zsh-z.plugin.zsh
