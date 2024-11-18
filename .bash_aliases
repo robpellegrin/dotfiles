@@ -5,6 +5,7 @@ alias commit="git commit -m"
 alias cp="cp -i"
 alias df="df -h"
 alias dir='dir --color=auto'
+alias dirs='dirs -v'
 alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
 alias free="free -h"
