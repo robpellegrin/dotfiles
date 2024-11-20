@@ -82,8 +82,8 @@ plugins=(
   git
   # vscode
   # z 
-  # zsh-autosuggestions 
-  # zsh-syntax-highlighting
+  zsh-autosuggestions 
+  zsh-syntax-highlighting
 )
 
 
@@ -139,4 +139,8 @@ fi
 # Load z plugin
 if [ -f ~/zsh-z/zsh-z.plugin.zsh ]; then
     source ~/zsh-z/zsh-z.plugin.zsh
+fi
+
+if [ -f ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+  source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
