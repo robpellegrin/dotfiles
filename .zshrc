@@ -86,8 +86,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-
-source $ZSH/oh-my-zsh.sh
+if [ -f $ZSH/oh-my-zsh.sh ]; then
+  source $ZSH/oh-my-zsh.sh
+fi
 
 # User configuration
 
@@ -118,6 +119,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Set the keybinding for accepting the suggestion.
+bindkey '\EOM' autosuggest-execute
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -141,6 +145,7 @@ if [ -f ~/zsh-z/zsh-z.plugin.zsh ]; then
     source ~/zsh-z/zsh-z.plugin.zsh
 fi
 
+# Load syntax highlighting
 if [ -f ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
