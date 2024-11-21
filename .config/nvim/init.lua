@@ -16,7 +16,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Set mapleader before lazy.nvim is loaded chickn
+-- Set mapleader before lazy.nvim is loaded.
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
