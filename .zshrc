@@ -141,11 +141,21 @@ if [ -f ~/.cdpath ]; then
 fi
 
 # Load z plugin
-if [ -f ~/zsh-z/zsh-z.plugin.zsh ]; then
-    source ~/zsh-z/zsh-z.plugin.zsh
-fi
+#if [ -f ~/zsh-z/zsh-z.plugin.zsh ]; then
+#    source ~/zsh-z/zsh-z.plugin.zsh
+#fi
 
 # Load syntax highlighting
 if [ -f ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+ZSH_HIGHLIGHT_STYLES[command]='fg=white'
+ZSH_HIGHLIGHT_STYLES[correct]='fg=white'
+
+ZSH_HIGHLIGHT_STYLES[command]='fg=white'
+ZSH_HIGHLIGHT_STYLES[parameter]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[option]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+
