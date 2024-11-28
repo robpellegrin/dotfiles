@@ -12,6 +12,8 @@ vim.api.nvim_set_keymap("n", "0", "^", { noremap = true })
 vim.api.nvim_set_keymap("n", "-", "g_", { noremap = true })
 vim.api.nvim_set_keymap("n", "j", "k", { noremap = true })
 vim.api.nvim_set_keymap("n", "k", "j", { noremap = true })
+vim.api.nvim_set_keymap("n", "F", "<C-f>", { noremap = true })
+vim.api.nvim_set_keymap("n", "B", "<C-b>", { noremap = true })
 
 --- Insert mode mappings
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
