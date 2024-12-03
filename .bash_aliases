@@ -17,6 +17,7 @@ alias gr="git restore"
 alias grep='grep --color=auto'
 alias gs="git status"
 alias lla='ls -lah'
+alias lg="lazygit"
 alias ll='ls -lh'
 alias ls='ls --color=always'
 alias notify='aplay --quiet ~/.local/complete.wav'
