@@ -28,6 +28,10 @@ alias sensors='sensors -f'
 alias vdir='vdir --color=auto'
 alias docker='podman'
 
+if [ -f /usr/bin/bat ]; then
+  alias cat="bat"
+fi
+
 # Detect the distribution and set package management commands
 if [ -f /etc/debian_version ]; then
     # For Debian-based systems
