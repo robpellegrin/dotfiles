@@ -1,8 +1,6 @@
 -- This file contains only custom keybindings for neovim.
 
 --- Normal mode mappings
-vim.api.nvim_set_keymap("n", "J", ":m +1<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "U", ":m -2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-x>", ":q<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-X>", ":qa!<CR>", { noremap = true, silent = true })
