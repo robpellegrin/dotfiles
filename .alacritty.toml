@@ -1,0 +1,22 @@
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullScreen"},
+]
+
+[window.padding]
+x = 10
+y = 10
+
+[cursor.style]
+shape = "Block"
+blinking = "Always"
+
+[selection]
+save_to_clipboard = true
+
+[font]
+size = 11.0
+normal = { family = "FiraCode", style = "normal" }
+
+[mouse]
+hide_when_typing = true
