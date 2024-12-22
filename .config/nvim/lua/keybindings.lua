@@ -10,10 +10,14 @@ vim.api.nvim_set_keymap("n", "D", "dd", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "0", "^", { noremap = true })
 vim.api.nvim_set_keymap("n", "-", "g_", { noremap = true })
--- vim.api.nvim_set_keymap("n", "j", "k", { noremap = true })
--- vim.api.nvim_set_keymap("n", "k", "j", { noremap = true })
 vim.api.nvim_set_keymap("n", "F", "<C-f>", { noremap = true })
 vim.api.nvim_set_keymap("n", "B", "<C-b>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>h", ":nohlsearch<CR>", { noremap = true })
+
+-- vim.api.nvim_set_keymap("n", "<C-k>", ":wincmd k<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-j>", ":wincmd j<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-h>", ":wincmd h<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-l>", ":wincmd l<CR>", { noremap = true })
 
 --- Insert mode mappings
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
