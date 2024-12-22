@@ -28,8 +28,14 @@ alias sensors='sensors -f'
 alias vdir='vdir --color=auto'
 alias docker='podman'
 
+# Only create an alias for bat if it is installed.
 if [ -f /usr/bin/bat ]; then
   alias cat="bat"
+fi
+
+# Only create an alias for btop if it is installed.
+if [ -f /usr/bin/btop ]; then
+  alias htop="btop"
 fi
 
 # Detect the distribution and set package management commands
@@ -45,9 +51,6 @@ elif hostnamectl | grep -i "opensuse" > /dev/null 2>&1; then
     # For openSUSE
     pkg_update="sudo zypper refresh && zypper list-updates"
     pkg_upgrade="sudo zypper update"
-else
-    # If the distribution is not recognized
-    echo "Unknown distribution"
 fi
 
 # Check if Flatpak is installed and modify commands to include Flatpak updates
