@@ -38,6 +38,14 @@ if [ -f /usr/bin/btop ]; then
   alias htop="btop"
 fi
 
+# Use eza as the ls command, if it is installed.
+if [ -f /usr/bin/eza ]; then
+  export EZA_FORMAT="selinux=."
+  alias ls='eza --icons --hyperlink'
+  alias ll='ls -l'
+  alias lla='ls -al'
+fi
+
 # Detect the distribution and set package management commands
 if [ -f /etc/debian_version ]; then
     # For Debian-based systems
