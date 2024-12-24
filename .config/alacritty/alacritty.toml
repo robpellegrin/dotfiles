@@ -1,3 +1,5 @@
+terminal.shell = "/usr/bin/tmux"
+
 [keyboard]
 bindings = [
 { key = "F11", action = "ToggleFullScreen"},
