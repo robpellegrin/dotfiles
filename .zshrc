@@ -80,8 +80,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  # vscode
-  # z 
   zsh-autosuggestions 
   zsh-syntax-highlighting
 )
@@ -139,11 +137,6 @@ fi
 if [ -f ~/.cdpath ]; then
   source ~/.cdpath
 fi
-
-# Load z plugin
-#if [ -f ~/zsh-z/zsh-z.plugin.zsh ]; then
-#    source ~/zsh-z/zsh-z.plugin.zsh
-#fi
 
 # Load syntax highlighting
 if [ -f ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
