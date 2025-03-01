@@ -8,7 +8,7 @@ alias dir='dir --color=auto'
 alias dirs='dirs -v'
 alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
-alias free="free -h"
+alias free="free -h --mega"
 alias ga="git add"
 alias gcc='gcc -Wall -Wextra -pedantic'
 alias gc="git commit"
