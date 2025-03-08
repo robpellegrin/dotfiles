@@ -25,6 +25,9 @@ require("lazy").setup("plugins")
 -- Enable line numbers
 vim.cmd("set number")
 
+-- Disable swap file
+vim.opt.swapfile = false
+
 -- Set tabs configuration
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
