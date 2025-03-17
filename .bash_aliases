@@ -16,6 +16,7 @@ alias gp="git pull"
 alias gr="git restore"
 alias grep='grep --color=auto'
 alias gs="git status"
+alias j='jobs'
 alias lla='ls -lah'
 alias lg="lazygit"
 alias ll='ls -lh'
