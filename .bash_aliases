@@ -1,13 +1,10 @@
 alias ...="cd ../.."
 alias ..="cd .."
 alias clip='xsel -ib'
-alias commit="git commit -m"
 alias cp="cp -i"
 alias df="df -h"
 alias dir='dir --color=auto'
 alias dirs='dirs -v'
-alias egrep='grep -E --color=auto'
-alias fgrep='fgrep --color=auto'
 alias free="free -h --mega"
 alias ga="git add"
 alias gcc='gcc -Wall -Wextra -pedantic'
@@ -16,9 +13,7 @@ alias gp="git pull"
 alias gr="git restore"
 alias grep='grep --color=auto'
 alias gs="git status"
-alias j='jobs'
 alias lla='ls -lah'
-alias lg="lazygit"
 alias ll='ls -lh'
 alias ls='ls --color=always'
 alias notify='aplay --quiet ~/.local/complete.wav'
