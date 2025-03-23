@@ -26,5 +26,3 @@ vim.api.nvim_set_keymap("i", "<C-x>", "<Esc>:q<CR>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "-", "^", { noremap = true })
 vim.api.nvim_set_keymap("v", "=", "g_", { noremap = true })
-vim.api.nvim_set_keymap("v", "j", "k", { noremap = true })
-vim.api.nvim_set_keymap("v", "k", "j", { noremap = true })
