@@ -19,6 +19,6 @@
     "editor.lightbulb.enabled": "off",
     "debug.allowBreakpointsEverywhere": true,
     "latex-workshop.latex.outDir": "%DIR%/latex-build",
-    "latex-workshop.formatting.latex": "tex-fmt",
+    "latex-workshop.formatting.latex": "latexindent",
     "redhat.telemetry.enabled": false,
 }
