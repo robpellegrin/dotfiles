@@ -117,6 +117,12 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Enable vi mode
+bindkey -v
+
+# Remap jj to Esc in vi mode
+bindkey -M viins 'jj' vi-cmd-mode
+
 # Set the keybinding for accepting the suggestion.
 bindkey '\EOM' autosuggest-execute
 
