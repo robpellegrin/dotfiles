@@ -1,0 +1,11 @@
+configuration {
+    kb-remove-to-eol: "";
+    kb-row-up: "Up,Control+k";
+    kb-row-down: "Down,Control+j";
+    kb-accept-entry: "KP_Enter,Return";
+
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
+//@theme "/usr/share/rofi/themes/paper-float.rasi"
