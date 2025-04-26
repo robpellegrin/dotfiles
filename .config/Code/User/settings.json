@@ -21,4 +21,7 @@
     "latex-workshop.latex.outDir": "%DIR%/latex-build",
     "latex-workshop.formatting.latex": "latexindent",
     "redhat.telemetry.enabled": false,
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
 }
