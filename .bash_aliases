@@ -35,7 +35,7 @@ if [ -f /usr/bin/btop ]; then
 fi
 
 # Use eza as the ls command, if it is installed.
-if [ -f /usr/bin/eza ]; then
+if [ -f /usr/bin/eza ] || [ -f /home/rob/.cargo/bin/eza ]; then
   export EZA_FORMAT="selinux=."
   alias ls='eza --icons --hyperlink'
   alias ll='ls -l'
