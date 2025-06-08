@@ -35,7 +35,7 @@ if [ -f /usr/bin/btop ]; then
 fi
 
 # Use eza as the ls command, if it is installed.
-if [ -f /usr/bin/eza ] || [ -f /home/rob/.cargo/bin/eza ]; then
+if [ -f /usr/bin/eza ] || [ -f /home/$(whoami)/.cargo/bin/eza ]; then
   export EZA_FORMAT="selinux=."
   alias ls='eza --icons --hyperlink'
   alias ll='ls -l'
@@ -51,10 +51,6 @@ elif [ -f /etc/redhat-release ]; then
     # For Red Hat-based systems
     pkg_update="dnf check-update"
     pkg_upgrade="yes | sudo dnf upgrade"
-elif hostnamectl | grep -i "opensuse" > /dev/null 2>&1; then
-    # For openSUSE
-    pkg_update="sudo zypper refresh && zypper list-updates"
-    pkg_upgrade="sudo zypper update"
 fi
 
 # Check if Flatpak is installed and modify commands to include Flatpak updates
