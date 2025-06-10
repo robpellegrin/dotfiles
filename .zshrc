@@ -149,6 +149,8 @@ if [ -f ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+export EDITOR=nvim
+
 ZSH_HIGHLIGHT_STYLES[command]='fg=white'
 ZSH_HIGHLIGHT_STYLES[correct]='fg=white'
 
