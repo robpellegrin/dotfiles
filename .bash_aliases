@@ -49,7 +49,7 @@ if [ -f /etc/debian_version ]; then
     pkg_upgrade="sudo apt upgrade -y"
 elif [ -f /etc/redhat-release ]; then
     # For Red Hat-based systems
-    pkg_update="dnf check-update"
+    pkg_update="sudo dnf check-update"
     pkg_upgrade="yes | sudo dnf upgrade"
 fi
 
