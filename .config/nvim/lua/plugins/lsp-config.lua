@@ -21,27 +21,28 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
 
-      lspconfig.lua_ls.setup({
+      -- Enable the servers
+      vim.lsp.enable('lua_ls', {
         capabilities = capabilities,
       })
 
-      lspconfig.bashls.setup({
+      vim.lsp.enable('bashls', {
         capabilities = capabilities,
       })
 
-      lspconfig.clangd.setup({
+      vim.lsp.enable('clangd', {
         capabilities = capabilities,
       })
 
-      lspconfig.rust_analyzer.setup({
+      vim.lsp.enable('rust_analyzer', {
         capabilities = capabilities,
       })
 
-      lspconfig.pylsp.setup({
+      vim.lsp.enable('pylsp', {
         capabilities = capabilities,
       })
 
@@ -49,5 +50,6 @@ return {
       vim.keymap.set("n", "H", vim.lsp.buf.hover, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
+
   },
 }
