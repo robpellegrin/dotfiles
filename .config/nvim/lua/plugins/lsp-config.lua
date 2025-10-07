@@ -15,7 +15,6 @@ return {
           "bashls",
           "clangd",
           "pylsp",
-          --"ruby_lsp"
         },
       })
     end,
@@ -34,7 +33,6 @@ return {
         capabilities = capabilities,
       })
 
-
       lspconfig.clangd.setup({
         capabilities = capabilities,
       })
@@ -46,10 +44,6 @@ return {
       lspconfig.pylsp.setup({
         capabilities = capabilities,
       })
-
-      -- lspconfig.ruby_lsp.setup({
-      --  capabilities = capabilities,
-      -- })
 
       -- Key bindings
       vim.keymap.set("n", "H", vim.lsp.buf.hover, {})
