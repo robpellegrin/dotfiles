@@ -16,7 +16,6 @@ alias gs="git status"
 alias lla='ls -lah'
 alias ll='ls -lh'
 alias ls='ls --color=always'
-alias notify='aplay --quiet ~/.local/complete.wav'
 alias push="git push"
 alias py='python3'
 alias rp='rsync --progress'
@@ -27,11 +26,6 @@ alias docker='podman'
 # Only create an alias for bat if it is installed.
 if [ -f /usr/bin/bat ]; then
   alias cat="bat"
-fi
-
-# Only create an alias for btop if it is installed.
-if [ -f /usr/bin/btop ]; then
-  alias htop="btop"
 fi
 
 # Use eza as the ls command, if it is installed.
