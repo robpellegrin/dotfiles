@@ -126,6 +126,8 @@ bindkey -M viins 'jj' vi-cmd-mode
 # Set the keybinding for accepting the suggestion.
 bindkey '\EOM' autosuggest-execute
 
+bindkey '^E' autosuggest-execute
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
