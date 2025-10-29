@@ -67,9 +67,12 @@
     virtualenv                # python virtual environment
     context                   # user@host
     time                      # current time
+    battery
     # =========================[ Line #2 ]=========================
     newline                   # \n
   )
+
+  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_HIDE_ABOVE_THRESHOLD=30
 
   # Basic style options that define the overall prompt look.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
