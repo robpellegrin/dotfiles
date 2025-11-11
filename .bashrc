@@ -98,13 +98,13 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Loaded aliases from file.
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+if [ -f ~/.shell_aliases ]; then
+  source ~/.shell_aliases
 fi
 
 # Load custom path variables
 if [ -f ~/.custom_path ]; then
-  . ~/.custom_path
+  source ~/.custom_path
 fi
 
 # Load CD customizations

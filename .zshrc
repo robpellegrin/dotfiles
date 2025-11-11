@@ -125,15 +125,14 @@ bindkey -M viins 'jj' vi-cmd-mode
 
 # Set the keybinding for accepting the suggestion.
 bindkey '\EOM' autosuggest-execute
-
 bindkey '^E' autosuggest-execute
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Load aliases from bash
-if [ -f ~/.bash_aliases ]; then
-  source ~/.bash_aliases
+if [ -f ~/.shell_aliases ]; then
+  source ~/.shell_aliases
 fi
 
 # Load custom path variables
@@ -149,16 +148,16 @@ fi
 # Load syntax highlighting
 if [ -f ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ZSH_HIGHLIGHT_STYLES[command]='fg=white'
+  ZSH_HIGHLIGHT_STYLES[correct]='fg=white'
+
+  ZSH_HIGHLIGHT_STYLES[command]='fg=white'
+  ZSH_HIGHLIGHT_STYLES[parameter]='fg=yellow'
+  ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+  ZSH_HIGHLIGHT_STYLES[option]='fg=magenta'
+  ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 fi
 
 export EDITOR=nvim
 
-ZSH_HIGHLIGHT_STYLES[command]='fg=white'
-ZSH_HIGHLIGHT_STYLES[correct]='fg=white'
-
-ZSH_HIGHLIGHT_STYLES[command]='fg=white'
-ZSH_HIGHLIGHT_STYLES[parameter]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[option]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 
