@@ -94,24 +94,6 @@ if [ -x /usr/bin/dircolors ]; then
 
 fi
 
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# Loaded aliases from file.
-if [ -f ~/.shell_aliases ]; then
-  source ~/.shell_aliases
-fi
-
-# Load custom path variables
-if [ -f ~/.custom_path ]; then
-  source ~/.custom_path
-fi
-
-# Load CD customizations
-if [ -f ~/.cdpath ]; then
-  source ~/.cdpath
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -121,4 +103,9 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# Loaded aliases from file.
+if [ -f ~/.shellrc ]; then
+  source ~/.shellrc
 fi
