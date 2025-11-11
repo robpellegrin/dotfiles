@@ -2,3 +2,5 @@
 .config/nvim/lazy-lock.json
 .ssh/config
 .DS_Store
+.parallel/tmp/
+
