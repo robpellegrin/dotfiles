@@ -3,4 +3,4 @@
 .ssh/config
 .DS_Store
 .parallel/tmp/
-
+.config/Code/*
