@@ -1,19 +1,89 @@
-# colored GCC warnings and errors
+# ~/.shellrc
+
+# -------------------------------------------------------------
+# Common settings (works in both Bash and Zsh)
+# -------------------------------------------------------------
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Loaded aliases from file.
-if [ -f ~/.shell_aliases ]; then
-  source ~/.shell_aliases
-fi
+# Set default editor to nvim
+export EDITOR=nvim
 
-# Load custom path variables
-if [ -f ~/.custom_path ]; then
-  source ~/.custom_path
-fi
+# Use the *raw* URL for the Oh‑My‑Posh theme
+THEME_URL='~/.zsh/pure.omp.json'
 
-# Load CD customizations
-if [ -f ~/.cdpath ]; then
-  source ~/.cdpath
-fi
+case "$SHELL" in
+# -------------------------------------------------------------
+# Bash‑specific blocks
+# -------------------------------------------------------------
+  */bash)
+    # oh‑my‑posh for Bash
+    eval "$(oh-my-posh init bash --config $THEME_URL)"
 
-eval "$(oh-my-posh init bash --config /home/rob/Downloads/pure.omp.json)"
+    # Bash history
+    HISTCONTROL=ignoreboth            # ignore duplicates & leading space
+    HISTIGNORE="&:ls:pwd:exit"        # don't store these commands
+    shopt -s histappend               # append to $HISTFILE instead of overwriting
+    HISTSIZE=1000
+    HISTFILESIZE=2000
+
+    # Enable programmable completion if available
+    if ! shopt -oq posix; then
+      if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+      elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+      fi
+    fi
+    ;;
+
+
+# -------------------------------------------------------------
+# zsh‑specific blocks
+# -------------------------------------------------------------
+   */zsh)
+    # never ever beep ever
+    setopt NO_BEEP
+
+    # oh‑my‑posh for zsh
+    eval "$(oh-my-posh init zsh --config $THEME_URL)"
+
+    # Enable vi mode
+    bindkey -v
+
+    # Remap jj to Esc in vi mode
+    bindkey -M viins 'jj' vi-cmd-mode
+
+    # Set the keybinding for accepting zsh suggestion.
+    bindkey '\EOM' autosuggest-execute
+    bindkey '^E' autosuggest-execute
+
+    plugins=(
+      git
+      zsh-autosuggestions 
+    )
+
+    # zsh history
+    setopt HIST_IGNORE_SPACE 
+    setopt HIST_IGNORE_DUPS 
+    setopt APPEND_HISTORY
+    HISTSIZE=1000
+    HISTFILESIZE=2000
+
+    source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    source '/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+    ;;
+esac
+
+# -------------------------------------------------------------
+# Load extensions (aliases, paths, cdpath)
+# -------------------------------------------------------------
+
+custom_files=(
+  .shell_aliases
+  .custom_path
+  .cdpath
+)
+
+for file in "${custom_files[@]}"; do
+  [[ -f "$HOME/$file" ]] && source "$HOME/$file"
+done
