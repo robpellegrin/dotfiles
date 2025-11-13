@@ -46,6 +46,23 @@ case "$SHELL" in
 # zsh‑specific configuration
 # -------------------------------------------------------------
    */zsh)
+
+    capture_line() {
+      print -r -- "$BUFFER" > /tmp/cmd.tmp
+      zle kill-buffer
+    }
+
+    insert_cmd() {
+        BUFFER="$(cat /tmp/cmd.tmp)"
+        CURSOR=${#BUFFER}
+    }
+
+    zle -N capture_line
+    bindkey '^X^X' capture_line
+
+    zle -N insert_cmd
+    bindkey '^X^R' insert_cmd
+
     # never ever beep ever
     setopt NO_BEEP
 
