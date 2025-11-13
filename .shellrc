@@ -9,7 +9,12 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export EDITOR=nvim
 
 # Use the *raw* URL for the Oh‑My‑Posh theme
-THEME_URL='~/.zsh/pure.omp.json'
+THEME_URL='https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/pure.omp.json'
+THEME_FILE="~/.zsh/pure.omp.json"
+
+if [[ -f THEME_FILE ]]; then
+  THEME_URL="$THEME_FILE"
+fi
 
 case "$SHELL" in
 # -------------------------------------------------------------
