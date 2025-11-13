@@ -12,7 +12,7 @@ export EDITOR=nvim
 THEME_URL='https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/pure.omp.json'
 THEME_FILE="~/.zsh/pure.omp.json"
 
-if [[ -f THEME_FILE ]]; then
+if [[ ! -f THEME_FILE ]]; then
   THEME_URL="$THEME_FILE"
 fi
 
