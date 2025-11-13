@@ -58,10 +58,14 @@ case "$SHELL" in
     }
 
     zle -N capture_line
-    bindkey '^X^X' capture_line
-
     zle -N insert_cmd
+
+    # Key bindings
+    bindkey '^X^X' capture_line
     bindkey '^X^R' insert_cmd
+    bindkey '^[[3~' delete-char
+    bindkey '^[[1~' beginning-of-line
+    bindkey '^[[4~' end-of-line
 
     # never ever beep ever
     setopt NO_BEEP
