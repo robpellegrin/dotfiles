@@ -74,8 +74,12 @@ case "$SHELL" in
     HISTSIZE=1000
     HISTFILESIZE=2000
 
-    source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    source '/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+    ZSH_AUTO='.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
+    ZSH_SYNTAX='/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+
+    [[ -f "$ZSH_AUTO" ]] && source "$ZSH_AUTO"
+    [[ -f "$ZSH_SYNTAX" ]] && source "$ZSH_SYNTAX"
+
     ;;
 esac
 
