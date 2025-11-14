@@ -56,7 +56,7 @@ case "$SHELL" in
     }
 
     insert_cmd() {
-      BUFFER="$(cat /tmp/cmd.tmp)"
+      BUFFER="$BUFFER$(cat /tmp/cmd.tmp)"
       CURSOR=${#BUFFER}
     }
 
