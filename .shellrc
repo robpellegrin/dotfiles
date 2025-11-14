@@ -10,7 +10,7 @@ export EDITOR=nvim
 
 # Use the *raw* URL for the Oh‑My‑Posh theme
 THEME_URL='https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/pure.omp.json'
-THEME_FILE="$HOME/.zsh/pure.omp.json"
+THEME_FILE="$HOME/.zsh_theme"
 
 if [[ -f $THEME_FILE ]]; then
   THEME_URL="$THEME_FILE"
