@@ -13,7 +13,7 @@ THEME_URL='https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/pure.om
 THEME_FILE="~/.zsh/pure.omp.json"
 
 if [[ ! -f THEME_FILE ]]; then
-  THEME_URL="$THEME_FILE"
+  THEME_URL="$THEME_URL"
 fi
 
 case "$SHELL" in
