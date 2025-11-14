@@ -24,6 +24,6 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-if [ -f ~/.shellrc ]; then
-  source ~/.shellrc
+if [ -f ~/.shell_config ]; then
+  source ~/.shell_config
 fi

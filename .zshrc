@@ -34,4 +34,4 @@ setopt COMPLETE_IN_WORD
 #colors
 #
 
-[[ -f ~/.shellrc ]] && source ~/.shellrc
+[[ -f ~/.shell_config ]] && source ~/.shell_config
