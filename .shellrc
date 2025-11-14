@@ -70,8 +70,8 @@ case "$SHELL" in
 
     # Key bindings
     bindkey '^X^N' send_to_null
-    bindkey '^X^X' capture_line
-    bindkey '^X^R' insert_cmd
+    bindkey '^[' capture_line
+    bindkey '^]' insert_cmd
     bindkey '^[[3~' delete-char
     bindkey '^[[1~' beginning-of-line
     bindkey '^[[4~' end-of-line
