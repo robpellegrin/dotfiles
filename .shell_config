@@ -100,7 +100,7 @@ case "$SHELL" in
     setopt appendhistory
     setopt SHARE_HISTORY
 
-    ZSH_AUTO='.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'
+    ZSH_AUTO="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
     ZSH_SYNTAX='/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 
     [[ -f "$ZSH_AUTO" ]] && source "$ZSH_AUTO"
