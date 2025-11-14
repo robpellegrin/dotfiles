@@ -56,14 +56,20 @@ case "$SHELL" in
     }
 
     insert_cmd() {
-        BUFFER="$(cat /tmp/cmd.tmp)"
-        CURSOR=${#BUFFER}
+      BUFFER="$(cat /tmp/cmd.tmp)"
+      CURSOR=${#BUFFER}
+    }
+
+    send_to_null(){
+      BUFFER="$BUFFER >/dev/null 2>&1"
     }
 
     zle -N capture_line
     zle -N insert_cmd
+    zle -N send_to_null
 
     # Key bindings
+    bindkey '^X^N' send_to_null
     bindkey '^X^X' capture_line
     bindkey '^X^R' insert_cmd
     bindkey '^[[3~' delete-char
@@ -72,9 +78,6 @@ case "$SHELL" in
 
     # never ever beep ever
     setopt NO_BEEP
-
-    # oh‑my‑posh for zsh
-    eval "$(oh-my-posh init zsh --config $THEME_URL)"
 
     # Enable vi mode
     #bindkey -v
