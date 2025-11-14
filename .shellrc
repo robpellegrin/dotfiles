@@ -114,7 +114,7 @@ esac
 # -------------------------------------------------------------
 
 custom_files=(
-  .shell_aliases
+  .aliases
   .custom_path
   .cdpath
 )
