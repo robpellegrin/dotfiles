@@ -47,6 +47,9 @@ case "$SHELL" in
 # -------------------------------------------------------------
    */zsh)
 
+    # oh‑my‑posh for zsh
+    eval "$(oh-my-posh init zsh --config $THEME_URL)"
+
     capture_line() {
       print -r -- "$BUFFER" > /tmp/cmd.tmp
       zle kill-buffer
