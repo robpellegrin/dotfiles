@@ -1,3 +1,5 @@
+colorscheme default 
+
 " Disable compatibility with vi 
 set nocompatible
 
