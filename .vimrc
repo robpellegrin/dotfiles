@@ -1,4 +1,4 @@
-colorscheme default 
+colorscheme slate
 
 " Disable compatibility with vi 
 set nocompatible
@@ -15,9 +15,8 @@ filetype indent on
 " Turn on syntax highlighting
 syntax on
 
-" Add numbers to each line on the left-hand side.
 set number
-
+set autoindent
 set cursorline
 " set cursorcolumn
 
@@ -26,15 +25,27 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-set fillchars=eob:\
+let mapleader = " "
+
+" Keyboard Shortcuts
+
+nnoremap <leader>S :sp<CR>
+nnoremap <leader>V :vsp<CR>
+nnoremap <leader>C :close<CR>
 
 nnoremap - ^
 nnoremap = $
+inoremap - ^
+inoremap = $
+vnoremap - ^
+vnoremap = $
+
+inoremap jj <Esc>
 
 " Save with Ctrl+S
 nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
-vnoremap <C-s> <Esc>:w<CR>gv
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> <Esc>:w<CR>
 
 " Exit and discard with Ctrl+X
 nnoremap <C-x> :qa!<CR>
