@@ -59,5 +59,10 @@ if command -v flatpak &> /dev/null; then
 fi
 
 # Create aliases for update and upgrade commands
-alias update='$pkg_update'
-alias upgrade='$pkg_upgrade'
+if [ -z ${pkg_update+x} ]; then
+  alias update='$pkg_update'
+fi
+
+if [ -z ${pkg_upgrade+x} ]; then
+  alias upgrade='$pkg_upgrade'
+fi
