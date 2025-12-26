@@ -20,7 +20,7 @@ alias gr='git restore'
 alias gs='git status'
 alias lla='ls -lah'
 alias ll='ls -lh'
-alias ls='ls --color=always'
+alias ls='ls -l --color=always'
 alias push='git push'
 alias py='python3'
 alias rp='rsync --progress'
@@ -36,7 +36,7 @@ fi
 # Use eza as the ls command, if it is installed.
 if [ -f /usr/bin/eza ] || [ -f /home/$(whoami)/.cargo/bin/eza ]; then
   export EZA_FORMAT='selinux=.'
-  alias ls='eza --icons --hyperlink'
+  alias ls='eza -l --icons --hyperlink'
   alias ll='ls -l'
   alias lla='ls -al'
 fi
