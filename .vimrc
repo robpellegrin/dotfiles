@@ -1,5 +1,8 @@
 colorscheme slate
 
+" Disable swapfile
+set noswapfile
+
 " Disable compatibility with vi 
 set nocompatible
 
