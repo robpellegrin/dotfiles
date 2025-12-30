@@ -1,9 +1,15 @@
+""
+" @file:   .vimrc
+" @author: Rob Pellegrin
+"
+""
+
 colorscheme slate
 
 " Disable swapfile
 set noswapfile
 
-" Disable compatibility with vi 
+" Disable compatibility with vi
 set nocompatible
 
 " Enable type file detection.
@@ -28,14 +34,17 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+set listchars=trail:·
+
 let mapleader = " "
 
 ""
 " Keyboard Shortcuts
 ""
-nnoremap <leader>S :sp<CR>
-nnoremap <leader>V :vsp<CR>
-nnoremap <leader>C :close<CR>
+nnoremap <leader>h :nohlsearch<CR>
+nnoremap <leader>H :set list!<CR>
+nnoremap <leader><Tab> gt
+nnoremap <leader>T :tabnew<CR>
 
 nnoremap - ^
 nnoremap = $
@@ -45,7 +54,7 @@ vnoremap = $
 inoremap jj <Esc>
 
 " Save with Ctrl+W
-nnoremap <C-w> :w<CR>
+nnoremap <leader><C-w> :w<CR>
 inoremap <C-w> <Esc>:w<CR>
 vnoremap <C-w> <Esc>:w<CR>
 
