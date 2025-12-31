@@ -27,6 +27,7 @@ syntax on
 set number
 set autoindent
 set cursorline
+set autoread
 "set cursorcolumn
 
 set tabstop=2
@@ -44,7 +45,7 @@ let mapleader = " "
 nnoremap <leader>h :nohlsearch<CR>
 nnoremap <leader>H :set list!<CR>
 nnoremap <leader><Tab> gt
-nnoremap <leader>T :tabnew<CR>
+nnoremap <C-w>t :tabnew<CR>
 
 nnoremap - ^
 nnoremap = $
