@@ -16,6 +16,8 @@ if [[ -f $THEME_FILE ]]; then
   THEME_URL="$THEME_FILE"
 fi
 
+export TERM=xterm-256color
+
 case "$SHELL" in
 # -------------------------------------------------------------
 # Bash‑specific configuration
