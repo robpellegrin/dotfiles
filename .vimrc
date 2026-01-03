@@ -57,7 +57,7 @@ set statusline+=\ \ " Insert whitespace
 set statusline+=%p%% " Show percentage through the opened file
 "set statusline+=%y " Show detected filetype
 
-highlight StatusLine  ctermfg=1 ctermbg=7 guifg=white guibg=red
+highlight StatusLine  ctermfg=7 ctermbg=1 guifg=red guibg=white
 
 
 ""
