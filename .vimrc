@@ -1,7 +1,7 @@
 ""
 " @file:    .vimrc
 " @author:  Rob Pellegrin
-" @updated: 1/2/2025
+" @updated: 1/23/2025
 "
 ""
 
@@ -40,6 +40,8 @@ set expandtab
 
 set listchars=trail:·
 
+" Set fold method to indent for Python
+autocmd FileType python setlocal foldmethod=indent
 
 ""
 " Configure status line
@@ -59,12 +61,14 @@ set statusline+=%p%% " Show percentage through the opened file
 
 highlight StatusLine  ctermfg=7 ctermbg=1 guifg=red guibg=white
 
-
 ""
 " Keyboard Shortcuts
 ""
 
 let mapleader = " "
+
+" Tab toggles folding
+nnoremap <Tab> za
 
 nnoremap <leader>h :nohlsearch<CR>
 nnoremap <leader>H :set list!<CR>
@@ -79,14 +83,9 @@ vnoremap = $
 inoremap jj <Esc>
 
 " Save with Ctrl+s
-nnoremap <C-s> :wq<CR>
-inoremap <C-s> <Esc>:wq<CR>
-vnoremap <C-s> <Esc>:wq<CR>
-
-" Save with Ctrl+w
-nnoremap <leader><C-w> :w<CR>
-inoremap <C-w> <Esc>:w<CR>
-vnoremap <C-w> <Esc>:w<CR>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> <Esc>:w<CR>
 
 " Exit and discard with Ctrl+x
 nnoremap <C-x> :qa!<CR>
