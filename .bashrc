@@ -39,12 +39,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # Set default editor to nvim
 export EDITOR=vim
 
-# Enable VI mode
-set -o vi
-
-# Bind 'jj' to Esc in insert mode
-bind 'in vi-insert: "jj": "^["'
-
 custom_files=(
   .aliases
   .cdpath
