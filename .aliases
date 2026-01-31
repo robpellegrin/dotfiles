@@ -53,7 +53,6 @@ elif [ -f /etc/redhat-release ]; then
     pkg_upgrade='yes | sudo dnf upgrade'
 
 elif [ -f /etc/SUSE-brand ]; then
-    echo openSuse
     # For OpenSUSE systems
     pkg_update='sudo zypper refresh'
     pkg_upgrade='sudo zypper update'
