@@ -14,6 +14,7 @@ alias free='free -h --mega'
 alias ga='git add'
 alias gcc='gcc -Wall -Wextra -pedantic'
 alias gc='git commit'
+alias gd='git diff'
 alias gp='git pull'
 alias grep='grep --color=auto'
 alias gr='git restore'
@@ -34,7 +35,7 @@ if [ -f /usr/bin/bat ]; then
 fi
 
 # Use eza as the ls command, if it is installed.
-if [ -f /usr/bin/eza ] || [ -f /home/$(whoami)/.cargo/bin/eza ]; then
+if [ -f /usr/bin/eza ] || [ -f ~/.cargo/bin/eza ]; then
   export EZA_FORMAT='selinux=.'
   alias ls='eza -l --icons --hyperlink'
   alias ll='ls -l'
