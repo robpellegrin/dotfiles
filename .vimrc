@@ -1,7 +1,7 @@
 ""
 " @file:    .vimrc
 " @author:  Rob Pellegrin
-" @updated: 1/23/2025
+" @updated: 1/31/2025
 "
 ""
 
@@ -76,9 +76,18 @@ nnoremap <leader><Tab> gt
 nnoremap <C-w>t :tabnew<CR>
 
 nnoremap - ^
-nnoremap = $
 vnoremap - ^
+nnoremap = $
 vnoremap = $
+
+" Move selected lines up/down
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+
+nnoremap <leader>h ^
+vnoremap <leader>h ^
+nnoremap <leader>l $
+vnoremap <leader>l $
 
 inoremap jj <Esc>
 
