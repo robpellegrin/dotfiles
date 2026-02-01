@@ -17,10 +17,7 @@ set nocompatible
 filetype on
 
 " Enable plugins and load plugin for detected file type.
-filetype plugin on
-
-" Load an indent file for the detected file type.
-filetype indent on
+filetype plugin indent on
 
 " Turn on syntax highlighting
 syntax on
@@ -99,9 +96,9 @@ nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
 " Exit and discard with Ctrl+x
-inoremap <C-x> <Esc>:qa!<CR>a
-nnoremap <C-x> :qa!<CR>
-vnoremap <C-x> <Esc>:qa!<CR>gv
+inoremap <C-q> <Esc>:qa!<CR>a
+nnoremap <C-q> :qa!<CR>
+vnoremap <C-q> <Esc>:qa!<CR>gv
 
 "nnoremap <leader>cf :%!clang-format<CR>
 
