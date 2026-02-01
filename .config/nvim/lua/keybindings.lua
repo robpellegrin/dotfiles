@@ -10,7 +10,13 @@ vim.api.nvim_set_keymap("n", "D", "dd", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "-", "^", { noremap = true })
 vim.api.nvim_set_keymap("n", "=", "g_", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>h", ":nohlsearch<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>H", ":nohlsearch<CR>", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<leader>h", "^", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>l", "g_", { noremap = true })
+
+vim.api.nvim_set_keymap("v", "<leader>h", "^", { noremap = true })
+vim.api.nvim_set_keymap("v", "<leader>l", "g_", { noremap = true })
 
 -- vim.api.nvim_set_keymap("n", "<C-k>", ":wincmd k<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<C-j>", ":wincmd j<CR>", { noremap = true })
