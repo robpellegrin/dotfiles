@@ -1,76 +1,95 @@
+#################################
+# @author:  Rob Pellegrin
+# @file:    .aliases
+# @updated: 2/1/2026
+#################################
+
+
 alias ....='cd ../../../'
 alias ...='cd ../..'
 alias ..='cd ..'
+
+alias c='clear'
 alias cl='clear'
-alias clip='xsel -ib'
-alias cll='clear; ls -l'
 alias cls='clear; ls'
+
 alias cp='cp -i'
 alias df='df -h'
 alias dir='dir --color=auto'
-alias dirs='dirs -v'
-alias docker='podman'
+alias du='du -h'
 alias free='free -h --mega'
+alias grep='grep --color=auto'
+alias sensors='sensors -f'
+alias vdir='vdir --color=auto'
+
 alias ga='git add'
-alias gcc='gcc -Wall -Wextra -pedantic'
 alias gc='git commit'
 alias gd='git diff'
 alias gp='git pull'
-alias grep='grep --color=auto'
 alias gr='git restore'
 alias gs='git status'
-alias j='jobs'
-alias lla='ls -lah'
-alias ll='ls -lh'
-alias ls='ls -l --color=always'
+alias gu='git restore --staged'
 alias push='git push'
+
+alias gcc-warn='gcc -Wall -Wextra -pedantic'
+alias j='jobs'
 alias py='python3'
 alias rp='rsync --progress'
-alias sensors='sensors -f'
-alias tclip='tmux load-buffer -'
-alias vdir='vdir --color=auto'
 
-# Only create an alias for bat if it is installed.
-if [ -f /usr/bin/bat ]; then
+alias clip='xsel -ib'
+alias tclip='tmux load-buffer -'
+
+# Prefer eza for `ls`, if installed.
+if command -v eza >/dev/null 2>&1; then
+  export EZA_FORMAT='selinux=.'
+  alias ls='eza -l --icons --hyperlink'
+  alias ll='ls'
+  alias lla='ls -a'
+else
+  alias ls='ls -l --color=auto'
+  alias ll='ls'
+  alias lla='ls -a'
+fi
+
+# Prefer `bat` over `cat`, if installed.
+if command -v bat >/dev/null 2>&1; then
   alias cat='bat'
 fi
 
-# Use eza as the ls command, if it is installed.
-if [ -f /usr/bin/eza ] || [ -f ~/.cargo/bin/eza ]; then
-  export EZA_FORMAT='selinux=.'
-  alias ls='eza -l --icons --hyperlink'
-  alias ll='ls -l'
-  alias lla='ls -al'
-fi
+pkg_update() {
+  if [ -f /etc/debian_version ]; then
+    sudo apt update && apt list --upgradable
+  elif [ -f /etc/redhat-release ]; then
+    sudo dnf check-update
+  elif [ -f /etc/SUSE-brand ]; then
+    sudo zypper refresh
+  else
+    echo "Unknown distribution"
+    return 1
+  fi
 
-# Detect the distribution and set package management commands
-if [ -f /etc/debian_version ]; then
-    # For Debian-based systems
-    pkg_update='sudo apt update && apt list --upgradable'
-    pkg_upgrade='sudo apt upgrade -y'
+  if command -v flatpak >/dev/null 2>&1; then
+    flatpak update
+  fi
+}
 
-elif [ -f /etc/redhat-release ]; then
-    # For Red Hat-based systems
-    pkg_update='sudo dnf check-update'
-    pkg_upgrade='yes | sudo dnf upgrade'
+pkg_upgrade() {
+  if [ -f /etc/debian_version ]; then
+    sudo apt upgrade -y
+  elif [ -f /etc/redhat-release ]; then
+    sudo dnf upgrade -y
+  elif [ -f /etc/SUSE-brand ]; then
+    sudo zypper update -y
+  else
+    echo "Unknown distribution"
+    return 1
+  fi
 
-elif [ -f /etc/SUSE-brand ]; then
-    # For OpenSUSE systems
-    pkg_update='sudo zypper refresh'
-    pkg_upgrade='sudo zypper update'
-fi
+  if command -v flatpak >/dev/null 2>&1; then
+    flatpak update -y
+  fi
+}
 
-# Check if Flatpak is installed and modify commands to include Flatpak updates
-if command -v flatpak &> /dev/null; then
-    pkg_update="$pkg_update && flatpak update" # List Flatpak updates
-    pkg_upgrade="$pkg_upgrade && sudo flatpak update -y" # Apply Flatpak updates
-fi
+alias update='pkg_update'
+alias upgrade='pkg_upgrade'
 
-# Create aliases for update and upgrade commands
-if [ -z ${pkg_update+x} ]; then
-  alias update="$pkg_update"
-fi
-
-if [ -z ${pkg_upgrade+x} ]; then
-  alias upgrade="$pkg_upgrade"
-fi
