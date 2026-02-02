@@ -1,11 +1,11 @@
 ""
 " @file:    .vimrc
 " @author:  Rob Pellegrin
-" @updated: 1/31/2025
+" @updated: 02/01/2025
 "
 ""
 
-colorscheme slate
+colorscheme github_dark
 
 " Disable swapfile
 set noswapfile
@@ -87,6 +87,7 @@ vnoremap <leader>h ^
 vnoremap <leader>l $
 
 xnoremap <leader>s :sort<CR>
+nnoremap <leader>s :set spell!<CR>
 
 inoremap jj <Esc>
 
