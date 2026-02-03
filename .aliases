@@ -21,6 +21,7 @@ alias free='free -h --mega'
 alias grep='grep --color=auto'
 alias sensors='sensors -f'
 alias vdir='vdir --color=auto'
+alias view='vim -R'
 
 alias ga='git add'
 alias gc='git commit'
