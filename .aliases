@@ -63,7 +63,7 @@ pkg_update() {
   elif [ -f /etc/redhat-release ]; then
     sudo dnf check-update
   elif [ -f /etc/SUSE-brand ]; then
-    sudo zypper refresh
+    sudo zypper refresh && sudo zypper list-updates
   else
     echo "Unknown distribution"
     return 1
@@ -80,14 +80,14 @@ pkg_upgrade() {
   elif [ -f /etc/redhat-release ]; then
     sudo dnf upgrade -y
   elif [ -f /etc/SUSE-brand ]; then
-    sudo zypper update -y
+    sudo zypper update 
   else
     echo "Unknown distribution"
     return 1
   fi
 
   if command -v flatpak >/dev/null 2>&1; then
-    flatpak update -y
+    flatpak upgrade -y
   fi
 }
 
