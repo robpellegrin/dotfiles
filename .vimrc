@@ -1,7 +1,7 @@
 ""
 " @file:    .vimrc
 " @author:  Rob Pellegrin
-" @updated: 02/01/2025
+" @updated: 02/13/2025
 "
 ""
 
@@ -44,6 +44,7 @@ autocmd FileType python setlocal foldmethod=indent
 " Configure status line
 ""
 
+set statusline=    " Prevents issues when re-sourcing within Vim.
 set statusline+=%F " Full path to opened file
 set statusline+=%m " Show modified marker
 set statusline+=%r " Show read-only marker
@@ -51,10 +52,14 @@ set statusline+=%r " Show read-only marker
 " Right-align the following items
 set statusline+=%=
 
-set statusline+=%p%% " Show percentage through the opened file
-"set statusline+=%y " Show detected filetype
-set statusline+=\ \ " Insert whitespace
+set statusline+=%c       " Show column number
+set statusline+=\ \      " Insert a space
 set statusline+=\[%l/%L] " Current line/Total lines
+set statusline+=\ \      " Insert a space
+set statusline+=%p%%     " Percentage through file
+set statusline+=\ \      " Insert a space
+
+"set statusline+=%y " Show detected filetype
 
 highlight StatusLine  ctermfg=7 ctermbg=1 guifg=red guibg=white
 
