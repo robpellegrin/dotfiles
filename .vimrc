@@ -101,7 +101,7 @@ inoremap <C-s> <Esc>:w<CR>
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
-" Exit and discard with Ctrl+x
+" Exit and discard with Ctrl+q
 inoremap <C-q> <Esc>:qa!<CR>a
 nnoremap <C-q> :qa!<CR>
 vnoremap <C-q> <Esc>:qa!<CR>gv
