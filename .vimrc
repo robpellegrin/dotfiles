@@ -7,9 +7,6 @@
 
 colorscheme github_dark
 
-" Disable swapfile
-set noswapfile
-
 " Disable compatibility with vi
 set nocompatible
 
@@ -22,13 +19,25 @@ filetype plugin indent on
 " Turn on syntax highlighting
 syntax on
 
+" Keep swap files in one directory
+set directory=~/.vim/swap
+
+" Enable persistent undo
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1024
+
+" Enable backups
+set backup
+set backupdir=~/.vim/backup
+
 " Show opened file in statusline
 set laststatus=2
 
 set autoindent
 set autoread
-"set cursorline
 set number
+"set cursorline
 
 set expandtab
 set shiftwidth=2
