@@ -87,7 +87,7 @@ vnoremap <leader>h ^
 vnoremap <leader>l $
 
 xnoremap <leader>s :sort<CR>
-nnoremap <leader>s :set spell!<CR>
+nnoremap sp :set spell!<CR>
 
 inoremap jj <Esc>
 
@@ -103,3 +103,16 @@ vnoremap <C-q> <Esc>:qa!<CR>gv
 
 "nnoremap <leader>cf :%!clang-format<CR>
 
+function! CleanWhitespace()
+    " Store current cursor position
+    let l:cur_pos = getpos(".")
+    " Remove trailing whitespace
+    silent! %s/\s\+$//ge
+    " Remove whitespace from empty lines
+    silent! %s/^\n+//ge
+    " Restore cursor position
+    call setpos('.', l:cur_pos)
+endfunction
+
+" Set autocommands to call the function before saving
+autocmd BufWritePre * call CleanWhitespace()
