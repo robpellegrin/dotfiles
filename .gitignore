@@ -5,3 +5,8 @@
 .parallel/tmp/
 .config/Code/*
 *.log
+
+# Ignore Vim directorys
+.vim/backup/
+.vim/swap/
+.vim/undo/
