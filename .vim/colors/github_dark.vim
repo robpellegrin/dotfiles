@@ -103,4 +103,9 @@ call s:hi("SpellCap",      s:c.lightblue, s:c.none, "undercurl")
 call s:hi("SpellLocal",    s:c.orange,    s:c.none, "undercurl")
 call s:hi("SpellRare",     s:c.green,     s:c.none, "undercurl")
 
+"
+" Misc
+"
+call s:hi("EndOfBuffer",     s:c.base3,     s:c.none, "undercurl")
+
 highlight StatusLine  ctermfg=7 ctermbg=1 guifg=red guibg=white
