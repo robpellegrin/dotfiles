@@ -18,7 +18,7 @@ highlight PriorityComment guifg=red
 syntax match DoubleComment "##.*$"
 highlight DoubleComment guifg=#faa356 gui=bold ctermfg=36
 
-syntax match Star "[*=+]" containedin=ALL
+syntax match Star "[*=+]" " containedin=ALL
 highlight Star guifg=#fa7970
 
 syntax match Parens "[{}()\[\]]"
