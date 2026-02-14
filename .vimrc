@@ -47,7 +47,7 @@ set tabstop=2
 set listchars=trail:·
 
 " Set fold method to indent for Python
-autocmd FileType python setlocal foldmethod=indent
+"autocmd FileType python setlocal foldmethod=indent
 
 ""
 " Configure status line
