@@ -7,6 +7,9 @@
 
 colorscheme github_dark
 
+" Disable highlighting matching parens.
+let g:loaded_matchparen=1
+
 " Disable compatibility with vi
 set nocompatible
 
