@@ -19,19 +19,19 @@ syntax keyword pythonSelf self
 syntax match DoubleComment "##.*$"
 syntax match Parens "[{}()\[\]]"
 syntax match PriorityComment "#!.*$"
-syntax match Star "[*=//+]" " containedin=ALL
+syntax match Star "[*=//+]"
+syntax match dunderName "\v__\w+__" containedin=pythonFunction
 syntax match pythonCustomFPrefix "[fF]\ze['"]" containedin=ALL
-syntax match pythonInit "\<__init__\>" containedin=pythonFunction
 
 highlight DoubleComment guifg=#faa356 gui=bold ctermfg=36
 highlight Parens guifg=#7ce38b
 highlight PriorityComment guifg=red
 highlight Star guifg=#fa7970
 
+highlight link dunderName Star
+highlight link dunderName pythonBuiltin
 highlight link pythonCustomFPrefix Star
 highlight link pythonInclude Star
-highlight link pythonInit Star
-highlight link pythonInit pythonBuiltin
 highlight link pythonOperator Star
 
 highlight pythonBuiltin guifg=#79C0FF
