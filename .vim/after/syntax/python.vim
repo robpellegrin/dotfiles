@@ -12,15 +12,17 @@
 " "purp"      : "#cea5fb",
 " "none"      : "NONE",
 " "orange2"   : "#FFA657", " Named parameters
-" "deepblue"  : ""
+" "deepblue"  : "#79C0FF"
 
-syntax keyword pythonSelf self
+syntax match pythonSelf "\<self\>\ze\."
+"syntax keyword pythonSelf self containedin=ALL
 
 syntax match DoubleComment "##.*$"
 syntax match Parens "[{}()\[\]]"
 syntax match PriorityComment "#!.*$"
-syntax match Star "[*=//+]"
+syntax match Star "[*=//+<>]" containedin=ALLBUT,pythonArrow
 syntax match dunderName "\v__\w+__" containedin=pythonFunction
+syntax match pythonArrow "->"
 syntax match pythonCustomFPrefix "[fF]\ze['"]" containedin=ALL
 
 highlight DoubleComment guifg=#faa356 gui=bold ctermfg=36

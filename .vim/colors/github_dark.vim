@@ -26,7 +26,8 @@ let s:c = {
   \ "lightblue" : "#a2d2fb",
   \ "blue"      : "#77bdfb",
   \ "purp"      : "#cea5fb",
-  \ "none"      : "NONE"
+  \ "none"      : "NONE",
+  \ "darkblue"  : "#79C0FF",
   \ }
 
 " Helper
@@ -72,7 +73,7 @@ call s:hi("Conditional",   s:c.red,   s:c.none, s:c.none)
 call s:hi("Repeat",        s:c.red,   s:c.none, s:c.none)
 call s:hi("Operator",      s:c.base4, s:c.none, s:c.none)
 
-call s:hi("Type",          s:c.green, s:c.none, s:c.none)
+call s:hi("Type",          s:c.darkblue, s:c.none, s:c.none)
 call s:hi("PreProc",       s:c.green, s:c.none, s:c.none)
 
 call s:hi("Special",       s:c.orange, s:c.none, s:c.none)
