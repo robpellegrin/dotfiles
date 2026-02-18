@@ -1,6 +1,6 @@
 ##
 # @file:   .bashrc
-# @author: Rob Pellegrin 
+# @author: Rob Pellegrin
 #
 ##
 
@@ -40,7 +40,11 @@ unset rc
 ##############################
 
 export TERM=xterm-256color
-export HISTIGNORE="clear:ls:ll:git:cd:push:$HISTIGNORE"
+export HISTIGNORE="clear:ls:ll:cd:cd *:$HISTIGNORE"
+
+# Don't add git commands to hist file.
+export HISTIGNORE="git *:gs:ga *:gc *:gd:push:$HISTIGNORE"
+
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Set default editor to nvim
