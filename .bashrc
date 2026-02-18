@@ -43,10 +43,14 @@ export TERM=xterm-256color
 
 # Ignore duplicates and lines with leading whitespace.
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="clear:ls:ll:cd:cd *:$HISTIGNORE"
 
-# Don't add git commands to hist file.
-export HISTIGNORE="git *:gs:ga *:gc *:gd:push:$HISTIGNORE"
+HISTIGNORE="clear"
+HISTIGNORE="$HISTIGNORE:ls:ll"
+HISTIGNORE="$HISTIGNORE:cd:cd *"
+HISTIGNORE="$HISTIGNORE:git *"
+HISTIGNORE="$HISTIGNORE:gs:ga *:gc *:gd"
+
+export HISTIGNORE
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
