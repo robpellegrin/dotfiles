@@ -118,6 +118,9 @@ inoremap <C-q> <Esc>:qa!<CR>a
 nnoremap <C-q> :qa!<CR>
 vnoremap <C-q> <Esc>:qa!<CR>gv
 
+" Map InsertFileHeader() to F5 in normal mode
+nnoremap <F5> :call InsertFileHeader()<CR>
+
 "nnoremap <leader>cf :%!clang-format<CR>
 
 function! CleanWhitespace()
@@ -133,3 +136,34 @@ endfunction
 
 " Set autocommands to call the function before saving
 autocmd BufWritePre * call CleanWhitespace()
+
+" Function to insert Python file header docstring
+function! InsertFileHeader()
+    " Only apply to Python files
+    if &filetype !=# 'python' && expand('%:e') !=# 'py'
+        echo "Not a Python file — header not inserted."
+        return
+    endif
+
+    " Only insert if the first line is empty
+    if getline(1) !=# ''
+        echo "Top of file not empty — header not inserted."
+        return
+    endif
+
+    " Build header docstring
+    let header = '"""' . "\n"
+    let header .= '@file    ' . expand('%:t') . "\n"
+    let header .= '@author  ' . "Rob Pellegrin" . "\n"
+    let header .= '@date    ' . strftime("%m-%d-%Y") . "\n"
+    let header .= "\n"
+    let header .= '@updated ' . strftime("%m-%d-%Y") . "\n"
+    let header .= "\n"
+    let header .= '"""' . "\n"
+
+    " Insert at top of file
+    call append(0, split(header, "\n"))
+
+    " Move cursor inside the @brief line
+    call cursor(5, 0) " line 3 is @brief
+endfunction
