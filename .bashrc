@@ -145,7 +145,7 @@ build_prompt() {
     PS1=""
     PS1+="\[\e[$(bg_color)m\]$(bg_bar)\[\e[0m\] "
     PS1+="\[\e[2m\]\w\[\e[0m\] "
-    PS1+="$(git_prompt_cached)\n"
+    PS1+="$(git_prompt)\n"
     PS1+="\[\e[1;35m\]λ\[\e[0m\] "
 }
 
