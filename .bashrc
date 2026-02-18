@@ -114,58 +114,38 @@ bg_color() {
     fi
 }
 
-git_status() {
-    local branch dirty_count ahead behind
+git_prompt() {
+    git rev-parse --is-inside-work-tree &>/dev/null || return
 
-    # Get current branch
-    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+    local branch ahead behind dirty_count branch_color
 
-    # Dirty file count
-    dirty_count=$(git status --porcelain 2>/dev/null | wc -l)
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null \
+          || git rev-parse --short HEAD 2>/dev/null)
 
-    # Ahead / behind counts (relative to upstream)
+    # Count modified/staged files (ignore untracked for speed)
+    dirty_count=$(git status --porcelain -uno 2>/dev/null | wc -l)
+
     read ahead behind < <(
         git rev-list --left-right --count @{upstream}...HEAD 2>/dev/null
     )
 
-    # Build status string
-    local status=" $branch"
+    (( dirty_count > 0 )) && branch_color=31 || branch_color=32
 
-    # Dirty files
-    if (( dirty_count > 0 )); then
-        status+=" +$dirty_count"
-    fi
+    printf "\[\e[%sm\] %s" "$branch_color" "$branch"
 
-    # Commits ahead / behind
-    if (( ahead > 0 )); then
-        status+=" ↑$ahead"
-    fi
-    if (( behind > 0 )); then
-        status+=" ↓$behind"
-    fi
+    (( dirty_count > 0 )) && printf " +%d" "$dirty_count"
+    (( ahead > 0 )) && printf " ↑%d" "$ahead"
+    (( behind > 0 )) && printf " ↓%d" "$behind"
 
-    # Color logic
-    if (( dirty_count > 0 )); then
-        echo -e "\[\e[31m\]$status\[\e[0m\]"   # red if dirty
-    else
-        echo -e "\[\e[32m\]$status\[\e[0m\]"   # green if clean
-    fi
+    printf "\[\e[0m\]"
 }
 
-PROMPT_COMMAND='
-  # Progress bar
-  PS1="\[\e[$(bg_color)m\]$(bg_bar)\[\e[0m\] "
+build_prompt() {
+    PS1=""
+    PS1+="\[\e[$(bg_color)m\]$(bg_bar)\[\e[0m\] "
+    PS1+="\[\e[2m\]\w\[\e[0m\] "
+    PS1+="$(git_prompt_cached)\n"
+    PS1+="\[\e[1;35m\]λ\[\e[0m\] "
+}
 
-  # username@hostname
-  #PS1+="\u@\h "
-
-  # Current directory
-  PS1+="\[\e[2m\]\w\[\e[0m\] "
-
-  # Git status
-  PS1+="$(git_status)\n"
-
-  # Prompt symbol
-  PS1+="\[\e[1;35m\]λ\[\e[0m\] "
-'
-
+PROMPT_COMMAND+=(build_prompt)
