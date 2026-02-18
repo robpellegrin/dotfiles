@@ -45,10 +45,11 @@ export TERM=xterm-256color
 export HISTCONTROL=ignoreboth
 
 HISTIGNORE="clear"
-HISTIGNORE="$HISTIGNORE:ls:ll"
+HISTIGNORE="$HISTIGNORE:ls:ll:cls"
 HISTIGNORE="$HISTIGNORE:cd:cd *"
+HISTIGNORE="$HISTIGNORE:fg"
 HISTIGNORE="$HISTIGNORE:git *"
-HISTIGNORE="$HISTIGNORE:gs:ga *:gc *:gd"
+HISTIGNORE="$HISTIGNORE:gs:ga *:gc *:gd:push"
 
 export HISTIGNORE
 
@@ -144,7 +145,7 @@ build_prompt() {
     PS1=""
     PS1+="\[\e[$(bg_color)m\]$(bg_bar)\[\e[0m\] "
     PS1+="\[\e[2m\]\w\[\e[0m\] "
-    PS1+="$(git_prompt)\n"
+    PS1+="$(git_prompt_cached)\n"
     PS1+="\[\e[1;35m\]λ\[\e[0m\] "
 }
 
