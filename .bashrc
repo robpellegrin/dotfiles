@@ -40,6 +40,9 @@ unset rc
 ##############################
 
 export TERM=xterm-256color
+
+# Ignore duplicates and lines with leading whitespace.
+export HISTCONTROL=ignoreboth
 export HISTIGNORE="clear:ls:ll:cd:cd *:$HISTIGNORE"
 
 # Don't add git commands to hist file.
