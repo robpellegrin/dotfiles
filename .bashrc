@@ -11,6 +11,9 @@
 # ▱ = U+25B1
 # ❯ = U+276F
 
+# Make shell completions case insensitive
+bind "set completion-ignore-case on"
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
