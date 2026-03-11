@@ -25,9 +25,9 @@ syntax match dunderName "\v__\w+__" containedin=pythonFunction
 syntax match pythonArrow "->"
 syntax match pythonCustomFPrefix "[fF]\ze['"]" containedin=ALL
 
-highlight DoubleComment guifg=#faa356 gui=bold ctermfg=36
+highlight DoubleComment guifg=#424242 gui=bold ctermfg=36
 highlight Parens guifg=#7ce38b
-highlight PriorityComment guifg=red
+highlight PriorityComment guifg=e60000
 highlight Star guifg=#fa7970
 
 highlight link dunderName Star
