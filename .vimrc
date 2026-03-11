@@ -1,7 +1,7 @@
 ""
 " @file:    .vimrc
 " @author:  Rob Pellegrin
-" @updated: 02/13/2025
+" @updated: 03/11/2025
 "
 ""
 
@@ -18,6 +18,8 @@ filetype on
 
 " Enable plugins and load plugin for detected file type.
 filetype plugin indent on
+
+set omnifunc=syntaxcomplete#Complete
 
 " Turn on syntax highlighting
 syntax on
