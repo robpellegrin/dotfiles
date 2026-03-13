@@ -41,8 +41,8 @@ set laststatus=2
 
 set autoindent
 set autoread
+au CursorHold * checktime
 set number
-"set cursorline
 
 set expandtab
 set shiftwidth=2
