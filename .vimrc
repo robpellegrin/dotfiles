@@ -169,3 +169,46 @@ function! InsertFileHeader()
     " Move cursor inside the @brief line
     call cursor(5, 0) " line 3 is @brief
 endfunction
+
+function! UpdateFileHeader()
+    " Only apply to Python files
+    if &filetype !=# 'python' && expand('%:e') !=# 'py'
+        return
+    endif
+	
+	" Only update header if file has been modified.
+	if !&modified
+		return
+	endif
+
+    " Read the current file content
+    let l:lines = getline(1, '$')
+    let l:updated_found = 0
+	let l:line_number = 0
+	
+	let l:current_date = strftime('%m/%d/%Y')
+
+    for l:line_number in range(1, len(l:lines))
+		let l:line - l:lines[l:line_number - 1]
+		
+        " Check for the @updated line
+        if l:line =~ '@updated'
+            " Build the new updated line
+            let l:updated_line = substitute(l:line, '\(@updated:\s*\).*', '@updated ' . current_date, ''))
+            let l:updated_found = 1
+            break
+        endif
+    endfor
+
+    " If @updated line was found, replace it
+    if l:updated_found
+        " Replace the old line with the new updated line 
+        call setline(l:line_number, l:updated_line)
+    else
+        echo "No @updated line found in the file."
+    endif
+endfunction
+
+" Auto call UpdateFileHeader when saving a Python file
+autocmd BufWritePre *.py call UpdateFileHeader()
+
