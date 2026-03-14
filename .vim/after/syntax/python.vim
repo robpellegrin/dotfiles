@@ -27,7 +27,7 @@ syntax match pythonCustomFPrefix "[fF]\ze['"]" containedin=ALL
 
 highlight DoubleComment guifg=#424242 gui=bold ctermfg=36
 highlight Parens guifg=#7ce38b
-highlight PriorityComment guifg=e60000
+highlight PriorityComment guifg=#e60000
 highlight Star guifg=#fa7970
 
 highlight link dunderName Star
