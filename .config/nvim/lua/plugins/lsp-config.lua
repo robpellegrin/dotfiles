@@ -48,6 +48,7 @@ return {
 
       -- Key bindings
       vim.keymap.set("n", "H", vim.lsp.buf.hover, {})
+      vim.keymap.set({ "n", "v" }, "<leader>cf", vim.lsp.buf.format, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
 
