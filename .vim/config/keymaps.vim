@@ -1,7 +1,7 @@
 ""
 " @file:    .keymaps.vim
 " @author:  Rob Pellegrin
-" @updated: 03/14/2025
+" @updated: 03/16/2025
 "
 " Vim keyboard shortcuts
 "
@@ -52,6 +52,9 @@ vnoremap <C-q> <Esc>:qa!<CR>gv
 
 " Map InsertFileHeader() to F5 in normal mode
 nnoremap <F5> :call InsertFileHeader()<CR>
+
+" Toggle Explore with ctrl+n
+nnoremap <C-n> <Esc>:Rexplore<CR>
 
 "nnoremap <leader>cf :%!clang-format<CR>
 nnoremap <leader>cf :%!black<CR>
