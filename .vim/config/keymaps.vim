@@ -45,10 +45,16 @@ inoremap <C-s> <Esc>:w<CR>
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 nnoremap <C-n> :Explore<CR>
-" Exit and discard with Ctrl+q
-inoremap <C-q> <Esc>:qa!<CR>a
-nnoremap <C-q> :qa!<CR>
-vnoremap <C-q> <Esc>:qa!<CR>gv
+
+" Exit with Ctrl+q
+inoremap <C-q> <Esc>:q<CR>a
+nnoremap <C-q> :q<CR>
+vnoremap <C-q> <Esc>:q<CR>gv
+
+" Exit with Ctrl+q
+inoremap <leader><C-q> <Esc>:q!<CR>a
+nnoremap <leader><C-q> :q!<CR>
+vnoremap <leader><C-q> <Esc>:q!<CR>gv
 
 " Map InsertFileHeader() to F5 in normal mode
 nnoremap <F5> :call InsertFileHeader()<CR>
@@ -57,6 +63,4 @@ nnoremap <F5> :call InsertFileHeader()<CR>
 nnoremap <C-n> <Esc>:Rexplore<CR>
 
 "nnoremap <leader>cf :%!clang-format<CR>
-nnoremap <leader>cf :%!black<CR>
-
-
+nnoremap <leader>r :terminal python3 %<CR>
