@@ -1,14 +1,10 @@
 ""
 " @file:    .keymaps.vim
 " @author:  Rob Pellegrin
-" @updated: 03/16/2025
+" @updated: 03/19/2025
 "
 " Vim keyboard shortcuts
 "
-""
-
-""
-" Keyboard Shortcuts
 ""
 
 let mapleader = " "
