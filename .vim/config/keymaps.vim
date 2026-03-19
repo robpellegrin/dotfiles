@@ -63,4 +63,4 @@ nnoremap <F5> :call InsertFileHeader()<CR>
 nnoremap <C-n> <Esc>:Rexplore<CR>
 
 "nnoremap <leader>cf :%!clang-format<CR>
-nnoremap <leader>r :terminal python3 %<CR>
+nnoremap <leader><C-r> :terminal python3 %<CR>
