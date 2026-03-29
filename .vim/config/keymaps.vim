@@ -17,9 +17,7 @@ nnoremap <leader><Tab> gt
 nnoremap <leader>H :set list!<CR>
 nnoremap <leader>h :nohlsearch<CR>
 
-nnoremap - ^
 nnoremap = $
-vnoremap - ^
 vnoremap = $
 
 " Move selected lines up/down

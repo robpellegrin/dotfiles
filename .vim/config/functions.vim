@@ -48,3 +48,21 @@ function! InsertFileHeader()
     " Insert at top of file
     call append(0, split(header, "\n"))
 endfunction
+
+" Toggle cursor between first non-whitespace character and start of the line
+let s:toggle = 0
+
+function! ToggleHome()
+  " Check if toggle state is 0 (first press), move to first non-whitespace char
+  if s:toggle == 0
+    normal! ^
+    let s:toggle = 1
+  " If already at first non-whitespace character, toggle to start of the line
+  elseif s:toggle == 1
+    normal! 0
+    let s:toggle = 0
+  endif
+endfunction
+
+" Map the function to the Home key (or any key of your choice)
+nnoremap - :call ToggleHome()<CR>
