@@ -1,7 +1,7 @@
 ""
 " @file:    .keymaps.vim
 " @author:  Rob Pellegrin
-" @updated: 03/19/2025
+" @updated: 04/10/2025
 "
 " Vim keyboard shortcuts
 "
@@ -14,9 +14,11 @@ nnoremap <Tab> za
 
 nnoremap <C-w>t :tabnew<CR>
 nnoremap <leader><Tab> gt
+nnoremap <leader><Backspace> gT
 nnoremap <leader>H :set list!<CR>
 nnoremap <leader>h :nohlsearch<CR>
 
+" Make `=` behave like `$`
 nnoremap = $
 vnoremap = $
 
@@ -53,8 +55,5 @@ vnoremap <leader><C-q> <Esc>:q!<CR>gv
 " Map InsertFileHeader() to F5 in normal mode
 nnoremap <F5> :call InsertFileHeader()<CR>
 
-" Toggle Explore with ctrl+n
-nnoremap <C-n> <Esc>:Rexplore<CR>
-
-"nnoremap <leader>cf :%!clang-format<CR>
+" nnoremap <leader>cf :%!clang-format<CR>
 nnoremap <leader><C-r> :terminal python3 %<CR>
