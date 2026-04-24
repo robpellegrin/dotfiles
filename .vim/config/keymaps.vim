@@ -9,8 +9,14 @@
 
 let mapleader = " "
 
-" Tab toggles folding
-nnoremap <Tab> za
+" Toggle folding with spacebar
+nnoremap <Space> za
+
+" Ignore case when searching
+set ignorecase smartcase
+
+" Search and highlight while typing
+set incsearch
 
 nnoremap <C-w>t :tabnew<CR>
 nnoremap <leader><Tab> gt
@@ -26,15 +32,19 @@ vnoremap = $
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-nnoremap <leader>h ^
-nnoremap <leader>l $
-vnoremap <leader>h ^
-vnoremap <leader>l $
-
 xnoremap <leader>s :sort<CR>
 nnoremap sp :set spell!<CR>
 
 inoremap jj <Esc>
+
+" Resize splits
+nnoremap <C-Left>  :vertical resize -2<CR>
+nnoremap <C-Down>  :resize +2<CR>
+nnoremap <C-Up>    :resize -2<CR>
+nnoremap <C-Right> :vertical resize +2<CR>
+
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>s :split<CR>
 
 " Save with Ctrl+s
 inoremap <C-s> <Esc>:w<CR>
