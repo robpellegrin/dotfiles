@@ -30,6 +30,7 @@ alias gp='git pull'
 alias gr='git restore'
 alias gs='git status'
 alias gu='git restore --staged'
+alias gl='git log --pretty=format:"%C(dim)%h%Creset %s %C(yellow)(%an)%Creset%C(auto)%d$Creset" --stat'
 alias push='git push'
 
 alias gcc-warn='gcc -Wall -Wextra -pedantic'
@@ -80,7 +81,7 @@ pkg_upgrade() {
   elif [ -f /etc/redhat-release ]; then
     sudo dnf upgrade -y
   elif [ -f /etc/SUSE-brand ]; then
-    sudo zypper update 
+    sudo zypper update
   else
     echo "Unknown distribution"
     return 1
@@ -93,4 +94,3 @@ pkg_upgrade() {
 
 alias update='pkg_update'
 alias upgrade='pkg_upgrade'
-
