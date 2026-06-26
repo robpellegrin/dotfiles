@@ -1,7 +1,7 @@
 #################################
 # @author:  Rob Pellegrin
 # @file:    .aliases
-# @updated: 2/1/2026
+# @updated: 06/25/2026
 #################################
 
 
@@ -16,6 +16,7 @@ alias cls='clear; ls'
 alias cp='cp -i'
 alias df='df -h'
 alias dir='dir --color=auto'
+alias diff='diff --color'
 alias du='du -h'
 alias free='free -h --mega'
 alias grep='grep --color=auto'
